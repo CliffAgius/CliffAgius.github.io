@@ -1,4 +1,4 @@
-baseURL = "http://cliffordagius.co.uk/"
+baseURL = "https://cliffagius.github.io/"
 languageCode = "en-gb"
 title = "Blog for Clifford Agius"
 theme = "ananke"
