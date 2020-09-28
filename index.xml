@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Blog for Clifford Agius</title>
+    <title>Clifford Agius</title>
     <link>https://cliffagius.github.io/</link>
-    <description>Recent content on Blog for Clifford Agius</description>
+    <description>Recent content on Clifford Agius</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Mon, 28 Sep 2020 18:26:57 +0100</lastBuildDate><atom:link href="https://cliffagius.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://cliffagius.github.io/about/</link>
+      <pubDate>Mon, 28 Sep 2020 18:46:47 +0100</pubDate>
+      
+      <guid>https://cliffagius.github.io/about/</guid>
+      <description>About Me! My Name is Cliff&amp;hellip;</description>
+    </item>
+    
     <item>
       <title>My First Post</title>
       <link>https://cliffagius.github.io/posts/my-first-post/</link>
