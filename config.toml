@@ -1,0 +1,4 @@
+baseURL = "http://cliffordagius.co.uk/"
+languageCode = "en-gb"
+title = "Blog for Clifford Agius"
+theme = "ananke"
