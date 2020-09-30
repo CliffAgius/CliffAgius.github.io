@@ -15,11 +15,11 @@ hasCJKLanguage = true
 home = ["HTML", "RSS"]
 
 [params]
-  header_image = "img/home-bg-jeep.jpg"
+  header_image = "img/FlightDeck.jpg"
   SEOTitle = "Clifford Agius | CA-SOftware Ltd"
   description = ""
   keyword = ""
-  slogan = ""
+  slogan = "Writing code at 650MPH..."
 
   image_404 = "img/404-bg.jpg"
   title_404 = "Oh No... Master Warning... :("
@@ -37,9 +37,9 @@ home = ["HTML", "RSS"]
   algolia_apiKey = ""
 
   # Sidebar settings
-  sidebar_about_description = "Software Developer, Open Source Enthusiast and Life Adventurer"
-  #sidebar_avatar = "img/avatar-zhaohuabing.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
-  sidebar_avatar = "img/zhaohuabing.png"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  sidebar_about_description = "Freelance Software Developer in the Dotnet and IOT space, International Speaker and when not doing all that I am a Boeing 787 Pilot for a Major UK Airline. "
+  #sidebar_avatar = "img/ProfilePic.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
+  sidebar_avatar = "img/ProfilePic.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
   featured_tags = true 
   featured_condition_size = 1 
@@ -54,7 +54,7 @@ home = ["HTML", "RSS"]
 
   #Enable wechat pay & alipay to allow readers send reward money if they like the articles 
   reward = true 
-  # reward_guide = "如果这篇文章对你有用,请随意打赏" 
+  # reward_guide = "" 
 
   friends = false
   bookmarks = true
@@ -66,14 +66,17 @@ home = ["HTML", "RSS"]
 
   [params.social]
   rss            = true 
-  email          = "youremail@gmail.com"
+  email          = "CliffordAgius@CA_Software.co.uk"
 #  facebook      = "full profile url in facebook"
 #  googleplus    = "full profile url in googleplus"
-  twitter       = "full profile url in twitter"
-  linkedin       = "https://www.linkedin.com/in/yourlinkedinid"
+  twitter       = "https://twitter.com/CliffordAgius"
+  #Company LinkedIn
+  #linkedin       = "https://www.linkedin.com/in/clifford-agius-2a8b44176/"  
+  #Personal LinkedIn
+  linkedin       = "https://www.linkedin.com/in/clifford-agius/"  
 #  stackoverflow  = "https://stackoverflow.com/users/yourstackoverflowid"
 # instagram     = "full profile url in instagram"
-  github         = "https://github.com/yourgithub"
+  github         = "https://github.com/CliffAgius"
 #  wechat         = "your wechat qr code image"
 #  medium         = "full profile url in medium"
 #  #pinterest     = "full profile url in pinterest"
@@ -84,22 +87,7 @@ home = ["HTML", "RSS"]
 #  #xing          = "https://www.xing.com/profile/yourxingid"
 #  #git           = "full profile url for git user"
   
-#  [[params.friend_link]]
-# title = "Linda的博客"
-# href =  "https://zhaozhihan.com"
 
-#  [[params.bookmark_link]]
-#  title =  "Martin Fowler"
-#  href =  "https://martinfowler.com"
-#  [[params.bookmark_link]]
-#  title = "ServiceMesher"
-#  href =  "http://www.servicemesher.com"
-#  [[params.bookmark_link]]
-#  title =  "Pxhere"
-#  href = "https://pxhere.com"
-#  [[params.bookmark_link]]
-#  title = "unsplash"
-#  href = "https://unsplash.com"
   
   [[params.addtional_menus]]
   title =  "Speaking"
