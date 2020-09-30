@@ -91,7 +91,7 @@ home = ["HTML", "RSS"]
   
   [[params.addtional_menus]]
   title =  "Speaking"
-  href =  "/top/books/"
+  href =  "/top/speaking/"
   [[params.addtional_menus]]
   title =  "ABOUT"
   href =  "/top/about/"
