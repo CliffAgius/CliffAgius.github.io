@@ -1,12 +1,12 @@
 baseURL = "https://cliffagius.github.io/"
 languageCode = "en-gb"
-title = ""
+title = "Clifford Agius | CA-Software Ltd"
 theme = "hugo-theme-cleanwhite"
 
 
 # Enable comments by entering your Disqus shortname
 disqusShortname = ""
-googleAnalytics = ""
+googleAnalytics = "UA-158344868-1"
 preserveTaxonomyNames = true
 paginate = 5 #frontpage pagination
 hasCJKLanguage = true
@@ -15,11 +15,11 @@ hasCJKLanguage = true
 home = ["HTML", "RSS"]
 
 [params]
-  header_image = "img/FlightDeck.jpg"
-  SEOTitle = "Clifford Agius | CA-SOftware Ltd"
-  description = ""
-  keyword = ""
-  slogan = ""
+  header_image = "img/BlogImage.jpg"
+  SEOTitle = ""
+  description = "Blogging about being a Pilot flying a B787 around the world as well as being a .NET developer in the Xamarin/C#/IOT space. Have a question about any of that send them over I will try my best..."
+  keyword = "Freelance .NET IoT Developer c# Azure CASOftware"
+  slogan = "Freelance .NET / IoT Developer that just so happens to fly a Boeing 787 around the world."
 
   image_404 = "img/404-bg.jpg"
   title_404 = "Oh No... Master Warning... :("
@@ -53,7 +53,7 @@ home = ["HTML", "RSS"]
   disqus_site = ""
 
   #Enable wechat pay & alipay to allow readers send reward money if they like the articles 
-  reward = true 
+  #reward = true 
   # reward_guide = "" 
 
   friends = false

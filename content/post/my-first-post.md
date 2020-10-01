@@ -1,5 +1,5 @@
 ---
-draft: false
+draft: true
 layout:     post
 title: "My First Post"
 subtitle:   "Subtitle"
@@ -11,7 +11,6 @@ image: "https://img.zhaohuabing.com/in-post/istio-install_and_example/post-bg.jp
 tags:
     - Tags
 URL: "/2017/11/04/istio-install_and_example/"
-categories: [ Tech ]
 ---
 
 
