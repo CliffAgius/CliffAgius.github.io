@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title></title>
+    <title>Clifford Agius | CA-Software Ltd</title>
     <link>https://cliffagius.github.io/</link>
-    <description>Recent content on </description>
+    <description>Recent content on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
     <lastBuildDate>Mon, 28 Sep 2020 18:46:47 +0100</lastBuildDate><atom:link href="https://cliffagius.github.io/index.xml" rel="self" type="application/rss+xml" />
@@ -23,15 +23,6 @@
       
       <guid>https://cliffagius.github.io/top/speaking/</guid>
       <description>Speaking I do speaking with real words&amp;hellip;</description>
-    </item>
-    
-    <item>
-      <title>My First Post</title>
-      <link>https://cliffagius.github.io/2017/11/04/istio-install_and_example/</link>
-      <pubDate>Mon, 28 Sep 2020 18:26:57 +0100</pubDate>
-      
-      <guid>https://cliffagius.github.io/2017/11/04/istio-install_and_example/</guid>
-      <description>My First Page This is the first blog page tp check it&amp;rsquo;s all working&amp;hellip;</description>
     </item>
     
   </channel>
