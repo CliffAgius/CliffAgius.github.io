@@ -26,6 +26,16 @@
     </item>
     
     <item>
+      <title>10 steps to submitting your first Xamarin.Forms PR.</title>
+      <link>https://cliffagius.github.io/post/firstxamarinpr/</link>
+      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/firstxamarinpr/</guid>
+      <description>10 steps to submitting your first Xamarin.Forms PR. As a Freelance Xamarin Dev I spend time now and then looking at the Xamarin Github to see if the issue I have been battling with is my code or some bug in Xamarin.Forms or maybe I am trying to work out why something isn&amp;rsquo;t working how I had hoped.
+Now I am not saying by any stretch that Xamarin is a buggy code base far from it in the past year or two it has become very stable compared to previous years and yes there are bits here and there (Looking at you UWP!</description>
+    </item>
+    
+    <item>
       <title>Custom Fonts and Icons in Xamarin.Forms</title>
       <link>https://cliffagius.github.io/post/customfontsandiconsinxamarin/</link>
       <pubDate>Sun, 23 Sep 2018 00:00:00 +0000</pubDate>
