@@ -24,10 +24,32 @@
   
   <url>
     <loc>https://cliffagius.github.io/categories/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cliffagius.github.io/post/liveplayervlivereload/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cliffagius.github.io/post/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://cliffagius.github.io/tags/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cliffagius.github.io/tags/xamarin/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://cliffagius.github.io/categories/xamarin/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
   </url>
   
 </urlset>

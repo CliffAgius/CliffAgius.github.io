@@ -25,5 +25,14 @@
       <description>Speaking I do speaking with real words&amp;hellip;</description>
     </item>
     
+    <item>
+      <title>Live Player V Live Reload</title>
+      <link>https://cliffagius.github.io/post/liveplayervlivereload/</link>
+      <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/liveplayervlivereload/</guid>
+      <description>Live Player v Live Reload. So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again. Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes Xamarin.</description>
+    </item>
+    
   </channel>
 </rss>

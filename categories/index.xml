@@ -5,6 +5,16 @@
     <link>https://cliffagius.github.io/categories/</link>
     <description>Recent content in Categories on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-gb</language><atom:link href="https://cliffagius.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-gb</language>
+    <lastBuildDate>Fri, 03 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xamarin</title>
+      <link>https://cliffagius.github.io/categories/xamarin/</link>
+      <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/categories/xamarin/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
