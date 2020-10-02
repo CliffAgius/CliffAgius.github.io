@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Xamarin on Clifford Agius | CA-Software Ltd</title>
+    <link>https://cliffagius.github.io/categories/xamarin/</link>
+    <description>Recent content in Xamarin on Clifford Agius | CA-Software Ltd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Sun, 23 Sep 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/categories/xamarin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Custom Fonts and Icons in Xamarin.Forms</title>
+      <link>https://cliffagius.github.io/post/customfontsandiconsinxamarin/</link>
+      <pubDate>Sun, 23 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/customfontsandiconsinxamarin/</guid>
+      <description>Custom Fonts and Icons in Xamarin.Forms Custom Fonts and using Icons in your project sounds like a lot of work and importing projects like FFImageLoading or Iconize both amazing packages but for this a bit of overkill (if you can get the icons as a font pack!).
+So the first job is to get the custom font pack from the design team or the web and we want this in a .</description>
+    </item>
+    
+    <item>
+      <title>Live Player V Live Reload</title>
+      <link>https://cliffagius.github.io/post/liveplayervlivereload/</link>
+      <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/liveplayervlivereload/</guid>
+      <description>Live Player v Live Reload. So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again. Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes Xamarin.</description>
+    </item>
+    
+  </channel>
+</rss>

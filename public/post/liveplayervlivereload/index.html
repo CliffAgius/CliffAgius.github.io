@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/BlogImage.jpg">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/BlogImage.jpg" />
+    
+
+    
+    <meta name="title" content="Live Player V Live Reload" />
+    <meta property="og:title" content="Live Player V Live Reload" />
+    <meta property="twitter:title" content="Live Player V Live Reload" />
+    
+
+    
+    <meta name="description" content="Comparing Live Player to the Visual Studio LiveReload">
+    <meta property="og:description" content="Comparing Live Player to the Visual Studio LiveReload" />
+    <meta property="twitter:description" content="Comparing Live Player to the Visual Studio LiveReload" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Live Player V Live Reload-</title>
+
+    <link rel="canonical" href="/post/liveplayervlivereload/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/post/images/LiveReloadNuget.png')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/xamarin" title="Xamarin">
+                            Xamarin
+                        </a>
+                        
+                    </div>
+                    <h1>Live Player V Live Reload</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                Clifford Agius | CA-Software Ltd
+                         
+                        on 
+                        Friday, August 3, 2018
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#live-player-v-live-reload">Live Player v Live Reload.</a>
+      <ul>
+        <li><a href="#warnings">Warnings</a></li>
+        <li><a href="#final-thoughts">Final Thoughts</a></li>
+      </ul>
+    </li>
+    <li><a href="#happy-coding">Happy Coding&hellip;</a></li>
+  </ul>
+</nav>
+                
+                <h1 id="live-player-v-live-reload">Live Player v Live Reload.</h1>
+<p>So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again.  Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css?WT.mc_id=DOP-MVP-5003764">Xamarin.Forms has CSS</a> styling now that’s awesome too give it a try&hellip;).</p>
+<p>So, what is the alternative to the Build/Package/Deploy loop that will not only save you time but also your sanity&hellip;</p>
+<p>Enter two tools from the Visual Studio / Xamarin teams and they are:</p>
+<p><a href="https://docs.microsoft.com/xamarin/tools/live-player?WT.mc_id=DOP-MVP-5003764">- Live Player</a></p>
+<p><a href="https://docs.microsoft.com/xamarin/xamarin-forms/xaml/live-reload?WT.mc_id=DOP-MVP-5003764">- Live Reload</a></p>
+<p>They both allow you to enter a quicker loop of make a change and see that change almost instantly for UI changes, so that change of colour can be tweaked until it&rsquo;s just right.</p>
+<h2 id="warnings">Warnings</h2>
+<p>Both LivePlayer and LiveReload are still in various stages of Preview so what is written here could and probably has changed so check the links to the Docs above for the latest updates.</p>
+<p>These are MY observations as a freelance developer of both tools having used them on real life projects over recent months and I would be interested to hear your thoughts on them in the comments at the end. 
+(Not you mum, she reads my blog doesn’t understand it, but she reads it anyway&hellip; Hi Mum&hellip;)</p>
+<p>This blog is being written while at Flight Level 400 (40,000ft) so without a web connection so this really is my thoughts and experiences and any errors/omissions are due to a lack of Google and Stack Overflow. Don&rsquo;t worry the Autopilot is engaged and I am writing this from the comfort of the crew rest area while on break.</p>
+<hr>
+<h3 id="live-player">Live Player</h3>
+<p>So, what is LivePLayer, this was announced at Build17 and is designed as a getting started sandbox for developers to get their ideas visualized on a device quickly (Copied straight from the Docs).</p>
+<p>
+  <img src="../images/xamarin-live.png" alt="Live Player Pairing">
+
+</p>
+<p>The important part here is the &lsquo;On-Device&rsquo;, LivePlayer works by you installing the LivePlayer app from the respective App store onto your device and then pairing it with Visual Studio (both VS17 and VS4Mac work!). Then you can run the app in debug with the Device paired and as you make changes these are visualised immediately on the device which is super cool.  The app on the device receives the XAML changes and interprets them into the view you see on screen, so this also means that for layout and UI designs you can even see the IOS screen without needing the glowing apple machine in the corner of your office.
+This last part for me when I am travelling the world has been brilliant as I can just pack my dev Droid &amp; IOS devices and using my mini Wi-Fi router work on my projects on a beach or coffee shop somewhere around the world.</p>
+<p>So, this sounds too good to be true but trust me it works, and I have been using it since it launched last year to get most of the way with my UI designs, before moving back to the Build/Package/Deploy loop for final tweaks.</p>
+<p>But what are the limitations of Live Preview:</p>
+<ul>
+<li>You need a WIFI network that all devices share, and you can only pair and use one device at a time.</li>
+<li>As the code is interpreted you can&rsquo;t run some of the popular NuGet’s like SQLite/Json.Net as there is limited support for reflection.</li>
+<li>You can&rsquo;t use your superior Xamarin skills to test that killer Custom Renderer/Effect as they are not supported.</li>
+<li>Tools like FODY/AutoFac/AutoMapper won&rsquo;t work again due their use of reflection.</li>
+<li>Biggest of all limitation for me is the Lack of UWP support, Yes, I include UWP in my projects and this surprised me at first as Microsoft are shunning their own store and devices especially now the Surface Go is in our lives (SOOOO want one of those!!!).</li>
+</ul>
+<hr>
+<h3 id="live-reload">Live Reload</h3>
+<p>Next up and a more recent and I feel a quieter release is Live Reload, I only found out about this in the past few weeks and it has totally changed my Dev experience.  I had some issues getting Live reload working at first which I will talk about in a moment.</p>
+<p>So Live Reload requires you to install from the Visual Studio Marketplace as an extension now, but I&rsquo;m sure it will be part of VS soon. Currently it&rsquo;s only available for VS17 and not VS4Mac but the team say this is being worked on for a later release.
+Once you have the tooling installed for the project you need to install a NuGet package but follow the instructions on the Docs as I couldn&rsquo;t find it at first as the package is not on Nuget.org so you have to change your Package source to All to find it and don&rsquo;t forget to tick the Preview box as well (It&rsquo;s hidden away in there&hellip;)</p>
+<p>
+  <img src="../images/LiveReloadNuget.png" alt="Installing the NuGet">
+
+</p>
+<p>Once you have it installed for all the projects you need to add LiveReload.Init(); to the constructor in the Application class</p>
+<pre><code>public partial class App : Application
+{
+   public App ()
+   {
+      // Initialize Live Reload.
+      #if DEBUG   //Remove this for UWP to work!!
+      LiveReload.Init();
+      #endif
+    
+      InitializeComponent();
+      MainPage = new MainPage();
+   }
+}
+</code></pre>
+<p>So that’s it now you can Build and Deploy as if your deploying for real, and it&rsquo;s at this point during that first Deploy you can pop off for a well-earned coffee refill&hellip; Go You!!</p>
+<p>Now you have it deployed any changes you make to the XAML or CSS will be reflected immediately on the Device or and here is the best bit on your Emulator/Simulator of choice&hellip; Yes, no more lugging around dev devices and batteries, no more sand in the connectors and I guess a little less fuel used when flying around the world, carrying all those grams of weight.</p>
+<p>So, what can Live Reload do that is different to Live Preview, well other than it can work on device and emulator it&rsquo;s a deployed version of your application not an Interpreted version of the XAML/CSS but the actual On-Device live view, it&rsquo;s your actual app as it would work on that device.</p>
+<h3 id="now-that-is-super-cool">Now that is super cool</h3>
+<p>But what are its limitations there having to be some right it can&rsquo;t all be cake and Caipirinha&rsquo;s on the beach now can it.</p>
+<ul>
+<li>Will only show changes to XAML/CSS as this is all that is re-deployed to the device/emulator. Changes to VM or other code behind requires a re-deploy to take effect, but the Visual Studio and Xamarin teams are working on this for later releases so watch this space.</li>
+<li>I found that my Firewall/Anti-Virus software blocked MQTT.exe (required by LiveReload) as it thought it was naughty so sandboxed it. I had to set a rule to allow it before Live Reload worked.</li>
+<li>Works Offline for the Emulators but Wi-Fi is still needed for devices. (WooHoo coding in the Air&hellip; When on break of course!)</li>
+<li>Currently just for VS17 yet to come for VS4Mac.</li>
+<li>For UWP there is currently an issue where editing the XAML while in debug mode can cause runtime crashes which is why I remove the #if Debug part in the App.cs and run the App without debugging unless I need to step thru my code.  This is being worked on according to the docs so should be fixed soon.</li>
+</ul>
+<p>But why choose this over Live Preview what are the benefits that mean you can celebrate with another slice of cake and more coffee&hellip;</p>
+<ul>
+<li>Works with ALL Emulators and Simulators as well as ALL devices that are supported by Xamarin.Forms after all it&rsquo;s a deployed app not an interpreted version. Yes, even UWP and Tizen&hellip;</li>
+<li>It&rsquo;s a compiled and deployed version of your application so the full working version including all your favourite 3rd party libraries that don&rsquo;t work with Live Preview (Now we really are eating our cake!).</li>
+<li>Reload of the UI changes do not re-create the pages, so your App State is preserved across these re-loads so including all the View Model data and even the Injected Dependencies.  The only time you lose this is if you do a re-deploy due to changes to the C# code.</li>
+<li>You can deploy side by side so something like UWP on your laptop, Android Device and via your Mac to an IOS Simulator on your Windows Machine, all side by side and you can see your changes live. What is not to love about that&hellip; just need to link in the Samsung TV in the living room and get the MacBook down from the shelf to have all the Xamarin.Forms bases covered.</li>
+<li>If you go to the trouble to setup a remote MQTT server like <a href="https://www.cloudmqtt.com/">CloudMQTT.com</a> or <a href="https://www.hivemq.com/blog/hivemq-on-windows-azure-mqtt-microsoft-cloud">HiveMQ on Azure</a> you could even have remote devices seeing the changes live.  I have not tried this yet but plan to try it soon so that a client can see the app working and play with it while I make changes to the UI. Now this is seriously awesome if it works and I will post the set-up and thoughts on it here soon.</li>
+</ul>
+<hr>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>So that&rsquo;s my experience of playing with these the two awesome tools that are still officially in Preview, and for me the Live Reload wins by miles.  It works with all devices doesn’t need a special app to be installed on the device and it&rsquo;s your actual code not an interpreted version. I am still confused why there are competing tools in this space and I guess one will win out and for me I hope it&rsquo;s Live Reload.</p>
+<p>Both tools only allow you currently to edit the XAML/CSS but with news that Live Reload may in the future allow changes to your C# code again it&rsquo;s another reason to give it a try.</p>
+<p>Awesome work by the Visual Studio and Xamarin teams making Xmarin.Forms development not just easier but faster as well especially for the UI elements, this means I can get my UI layers in front of my Client earlier and reduce the need for major changes later in the project.</p>
+<p>As always (Yes, I know it&rsquo;s only my 2nd blog post!) if you have any comments then leave them below or contact me via Twitter/email etc or of course come find me on the beach I will be the one with the cake and Caipirinha and a big Live Reloaded smile on my face&hellip; ;)</p>
+<p>Right must go my time is up need to go do the other day job and fly the plane if your reading this I landed without incident as well&hellip;</p>
+<h1 id="happy-coding">Happy Coding&hellip;</h1>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/post/customfontsandiconsinxamarin/" data-toggle="tooltip" data-placement="top" title="Custom Fonts and Icons in Xamarin.Forms">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

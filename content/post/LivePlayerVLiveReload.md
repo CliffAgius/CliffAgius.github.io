@@ -10,9 +10,7 @@ tags:        ["Xamarin"]
 categories:  ["Xamarin" ]
 ---
 
-
 # Live Player v Live Reload.
-
 So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again.  Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes [Xamarin.Forms has CSS](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css?WT.mc_id=DOP-MVP-5003764) styling now that’s awesome too give it a try...).
 
 
