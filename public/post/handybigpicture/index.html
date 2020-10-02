@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/BlogImage.jpg">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/BlogImage.jpg" />
+    
+
+    
+    <meta name="title" content="Handy the Big Picture!" />
+    <meta property="og:title" content="Handy the Big Picture!" />
+    <meta property="twitter:title" content="Handy the Big Picture!" />
+    
+
+    
+    <meta name="description" content="The story behind #Handy the project to build a Prothetic Hand.">
+    <meta property="og:description" content="The story behind #Handy the project to build a Prothetic Hand." />
+    <meta property="twitter:description" content="The story behind #Handy the project to build a Prothetic Hand." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Handy the Big Picture!-</title>
+
+    <link rel="canonical" href="/post/handybigpicture/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/iot">iot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/static/images/NHSUnit.png')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/iot" title="IoT">
+                            IoT
+                        </a>
+                        
+                    </div>
+                    <h1>Handy the Big Picture!</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                Clifford Agius | CA-Software Ltd
+                         
+                        on 
+                        Monday, September 23, 2019
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#handy-and-the-big-picture">Handy and the Big Picture</a>
+      <ul>
+        <li><a href="#next-finding-and-3d-printing-a-hand">Next: Finding and 3D Printing a Hand.</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="handy-and-the-big-picture">Handy and the Big Picture</h1>
+<p>Meet Kayden a Local 15 year old and the son of close friends, as you can see he is a happy teenager (They do exist!) full of fun and ready to take on the world&hellip;</p>
+<p>
+  <img src="/static/images/Kayden.png" alt="Kayden">
+
+</p>
+<p>You may also notice that Kayden was born without a left forearm and hand and is also missing the middle fingers on his right hand, so life is a challenge at times but it&rsquo;s Ok the NHS (National Health Service here in the UK) are there to help free of charge (if you conveniently forget you pay TAX).  So from a very young age Kayden and his parents have been visiting hospital to be measured and fitted with a prosthetic left arm, great you may think job done whats next.</p>
+<p>
+  <img src="/static/images/NHSoffering.png" alt="NHS Offering">
+
+</p>
+<p>Sadly these arms are exceedingly basic consisting of some heavy plastic with a heavy metal hook on the end, this attaches to Kayden with Velcro and is actuated with a wire going up his sleeve to his other shoulder.  Now this is better than nothing at all and is far more than available in many parts of the world but the UK is not a poor nation we should be able to do better.  The official line from the NHS is that will not issue a growing child a full BioMechanical prosthetic until they are an adult as they are very expensive and will outgrow it too quickly, by expensive they cost over £45,000 for a basic unit that can only move a few fingers and isn&rsquo;t much different from the hook anyway.</p>
+<p>
+  <img src="/static/images/NHSUnit.png" alt="NHS Unit">
+
+</p>
+<hr>
+<p>Why am I blogging about this, well in 2016 there was some press coverage of a dad that 3D printed a hand for his daughter, that afternoon in the playground Kayden&rsquo;s mum and I was chatting and she asked if I had seen it and if still I had a 3D printer.  I answered yes to both questions and her reply was a sheepish smile before asking if I could help, of course I can was my reply&hellip; Oh what a journey since then&hellip; (Note to self must learn to say No&hellip;)</p>
+<p>This is the first in a series of blogs over the coming weeks about this 3 year journey, along the way giving talks at Meet-ups and Conferences around the world about the project and my progress. I have been writing blogs along the way but I was never happy with them as I didn&rsquo;t feel the story was interesting and the talks were about the technology used and not really the journey, but recently at the MK.Net meetup in Milton Keynes I was told otherwise and prompted to release the blogs.  However reading over the unreleased material I am still 100% happy so I am starting again and here is the first in many posts.</p>
+<p>I will cover everything from the past 3 years the up&rsquo;s and down&rsquo;s as well as the technology I have tried and used in providing Kayden with a Prosthetic Biomechanical Arm that is not only lighter and more comfortable than the offering from the NHS but also far cheaper.</p>
+<p>Let&rsquo;s remember that the NHS won&rsquo;t offer Kayden or any other children a full arm until they are adults, but as with all humans we learn to adapt to what we have, so here is Kayden making a cup of tea using his current arm.  In this you can see that he has adapted to his hook but it&rsquo;s still very basic.</p>
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<p>The blog title is the &ldquo;Big Picture&rdquo; as it occurred to me very early on that there is very little provision in the UK for children&rsquo;s prosthetics as they tend to grow too quick. If the NHS here can&rsquo;t or won&rsquo;t provide mainly due to costs then what are other parts of the world like?  My day job when not writing code as a freelance .NET/Xamarin developer is to Fly a Boeing 787 around the world, in fact I am currently writing this from the crew rest area on a flight back to the UK.</p>
+<p>On my many travels I go to many countries that have even less provisions than the UK so I have made it a mission of this project to not only provide Kayden with a working arm but to do so with easily available parts at the cheapest price.  My ultimate dream once Kayden and his family are happy is to provide all the designs and a Bill Of Materials so that it can be repeated by anyone around the world, maybe even get funding to send kits.</p>
+<p>So if this is indeed interesting then follow along as I talk about 3D printing, IOT Electronics and a Xamarin Mobile app, I post often about the project on Twitter if you want the latest and greatest news follow me there @CliffordAgius</p>
+<p>Finally I want to thank Kayden and his parents for allowing me to give talks and finally blog about this journey and for providing the photo&rsquo;s I am using.</p>
+<p>Right my break is nearly over it&rsquo;s time to go grab a coffee and head back to the flight deck.</p>
+<p>Oh and here is where I have managed to get to in this project&hellip;</p>
+<p><!-- raw HTML omitted --> <!-- raw HTML omitted --></p>
+<h2 id="next-finding-and-3d-printing-a-hand">Next: Finding and 3D Printing a Hand.</h2>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/firstxamarinpr/" data-toggle="tooltip" data-placement="top" title="10 steps to submitting your first Xamarin.Forms PR.">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/2017/11/04/istio-install_and_example/" data-toggle="tooltip" data-placement="top" title="My First Post">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
