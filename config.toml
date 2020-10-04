@@ -15,7 +15,7 @@ hasCJKLanguage = true
 home = ["HTML", "RSS"]
 
 [params]
-  header_image = "img/BlogImage.jpg"
+  header_image = "img/Banner.png"
   SEOTitle = ""
   description = "Blogging about being a Pilot flying a B787 around the world as well as being a .NET developer in the Xamarin/C#/IOT space. Have a question about any of that send them over I will try my best..."
   keyword = "Freelance .NET IoT Developer c# Azure CASOftware"
