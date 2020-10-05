@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/Banner.png">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/Banner.png" />
+    
+
+    
+    <meta name="title" content="Xamarin.Forms NEW Expander Control" />
+    <meta property="og:title" content="Xamarin.Forms NEW Expander Control" />
+    <meta property="twitter:title" content="Xamarin.Forms NEW Expander Control" />
+    
+
+    
+    <meta name="description" content="Coming along in the new Xamarin.Forms 4.6 release which at the time of writing is at 4.6pre4 (So it&#39;s due very soon!) is a new control called the ExpanderControl">
+    <meta property="og:description" content="Coming along in the new Xamarin.Forms 4.6 release which at the time of writing is at 4.6pre4 (So it&#39;s due very soon!) is a new control called the ExpanderControl" />
+    <meta property="twitter:description" content="Coming along in the new Xamarin.Forms 4.6 release which at the time of writing is at 4.6pre4 (So it&#39;s due very soon!) is a new control called the ExpanderControl" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Xamarin.Forms NEW Expander Control-</title>
+
+    <link rel="canonical" href="/post/xamarinformsexpandercontrol/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.css">
+
+    
+    
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/iot">iot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/Nuget.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/xamarin" title="Xamarin">
+                            Xamarin
+                        </a>
+                        
+                    </div>
+                    <h1>Xamarin.Forms NEW Expander Control</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                Clifford Agius | CA-Software Ltd
+                         
+                        on 
+                        Thursday, April 23, 2020
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#xamarinforms-new-expandercontrol">Xamarin.Forms NEW ExpanderControl</a>
+      <ul>
+        <li><a href="#where-to-start">Where to Start.</a></li>
+        <li><a href="#how-to-add-the-control">How to Add the Control.</a></li>
+        <li><a href="#how-to-use-the-control">How to use the control</a></li>
+        <li><a href="#what-does-it-look-like">What does it look like.</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="xamarinforms-new-expandercontrol">Xamarin.Forms NEW ExpanderControl</h1>
+<p>Coming along in the new Xamarin.Forms 4.6 release which at the time of writing is at 4.6pre4 (So it&rsquo;s due very soon!) is a new control called the ExpanderControl, now those of you that have played with Web will know this as the Accordian Control in that the user clicks/taps the element in the list and it expands to show more detail of that item.</p>
+<p>This control has been added to Xamarin.Forms by Community member <a href="https://github.com/AndreiMisiukevich">Andrei Misiukevich</a> thanks for the great work Andrei.</p>
+<h2 id="where-to-start">Where to Start.</h2>
+<p>First you need to make sure that you have at least Xamarin.Forms 4.6 or greater so head over to Manage Nuget Packages and select the Updates tab at the top, and you will see a list of available updates (I&rsquo;m doing this before 4.6 is released so I need to select the pre-release so show the coming toys&hellip;)</p>
+<p>
+  <img src="/images/Nuget.jpg" alt="Nuget">
+
+</p>
+<h2 id="how-to-add-the-control">How to Add the Control.</h2>
+<p>Sadly at the time of writing (Apr2020) there are no Docs for this control other than what the creator produced in the <a href="https://github.com/xamarin/Xamarin.Forms/pull/9044">GitHub PR</a> for this control but I am sure there will be some Docs along soon.</p>
+<p>The important part and the bit that is easy to miss is that this control is still Experimental so you need to add the flag to your projects otherwise it won&rsquo;t work and you&rsquo;ll be wondering why.</p>
+<p>In your Android <code>MainActivity.cs</code> add the SetFlags line above the <code>Forms.Init</code> here I also have the CollectionView to show how you add more than one Flag, it&rsquo;s just a String Array.</p>
+<pre><code> Xamarin.Forms.Forms.SetFlags(new string[] {&quot;CollectionView_Experimental&quot;, &quot;Expander_Experimental&quot;});
+</code></pre>
+<p>For iOS it&rsquo;s in your <code>AppDelegate.cs</code> in the same place before the <code>Forms.Init</code> line.</p>
+<pre><code> global::Xamarin.Forms.Forms.SetFlags(new string[] { &quot;CollectionView_Experimental&quot;, &quot;Expander_Experimental&quot;});
+</code></pre>
+<h2 id="how-to-use-the-control">How to use the control</h2>
+<p>So in your XAML (yes you can do C# as well but I prefer XAML for UI) you need to add the following:</p>
+<pre><code>&lt;Expander&gt;
+    &lt;Expander.Header&gt;
+        &lt;Label Text=&quot;Header&quot; /&gt;                     &lt;-- What your user will see Un-Expanded
+    &lt;Expander.Header&gt;
+    &lt;Expander.ContentTemplate&gt;
+        &lt;DataTemplate&gt;
+            &lt;StackLayout&gt;
+                &lt;Label Text=&quot;Content Line 1&quot; /&gt;     &lt;-- Content users will see when they expand.
+                &lt;Label Text=&quot;Content Line 2&quot; /&gt;
+            &lt;StackLayout&gt;
+        &lt;DataTemplate&gt;
+    &lt;Expander.ContentTemplate&gt;
+&lt;Expander&gt;
+</code></pre>
+<p>So what is happening here is that inside the Expander control you have a Header and Content section and as the name suggests you have the Header which is the content the User will see when the Control is closed or un-expanded and the Content section is what extra content will be displayed when the Control is tapped/clicked and it opens.</p>
+<p>There are also values you can change for settings like the Animation length when opening and closing and the Easing how quickly it starts the animation:</p>
+<pre><code>public uint ExpandAnimationLength { get; set; }
+
+public uint CollapseAnimationLength { get; set; }
+
+public Easing ExpandAnimationEasing { get; set; }
+
+public Easing CollapseAnimationEasing { get; set; }
+</code></pre>
+<h2 id="what-does-it-look-like">What does it look like.</h2>
+<p>With a few lines of code added to the <code>File-&gt;New</code> of a Xamarin Shell page like this:</p>
+<pre><code>&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+&lt;ContentPage
+    x:Class=&quot;ExpanderControl.Views.ItemsPage&quot;
+    xmlns=&quot;http://xamarin.com/schemas/2014/forms&quot;
+    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2009/xaml&quot;
+    xmlns:d=&quot;http://xamarin.com/schemas/2014/forms/design&quot;
+    xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+    x:Name=&quot;BrowseItemsPage&quot;
+    Title=&quot;{Binding Title}&quot;
+    mc:Ignorable=&quot;d&quot;&gt;
+
+    &lt;ContentPage.ToolbarItems&gt;
+        &lt;ToolbarItem Clicked=&quot;AddItem_Clicked&quot; Text=&quot;Add&quot; /&gt;
+    &lt;/ContentPage.ToolbarItems&gt;
+
+    &lt;RefreshView Command=&quot;{Binding LoadItemsCommand}&quot; IsRefreshing=&quot;{Binding IsBusy, Mode=TwoWay}&quot;&gt;
+        &lt;CollectionView x:Name=&quot;ItemsCollectionView&quot; ItemsSource=&quot;{Binding Items}&quot;&gt;
+            &lt;CollectionView.ItemTemplate&gt;
+                &lt;DataTemplate&gt;
+                    &lt;Expander&gt;
+                        &lt;Expander.Header&gt;
+                            &lt;Label
+                                Padding=&quot;5&quot;
+                                BackgroundColor=&quot;BurlyWood&quot;
+                                FontSize=&quot;16&quot;
+                                LineBreakMode=&quot;NoWrap&quot;
+                                Style=&quot;{DynamicResource ListItemTextStyle}&quot;
+                                Text=&quot;{Binding Text}&quot; /&gt;
+                        &lt;/Expander.Header&gt;
+                        &lt;Expander.Content&gt;
+                            &lt;Label
+                                Padding=&quot;5&quot;
+                                BackgroundColor=&quot;LightBlue&quot;
+                                FontSize=&quot;13&quot;
+                                LineBreakMode=&quot;WordWrap&quot;
+                                Style=&quot;{DynamicResource ListItemDetailTextStyle}&quot;
+                                Text=&quot;{Binding Description}&quot; /&gt;
+                        &lt;/Expander.Content&gt;
+                    &lt;/Expander&gt;
+                &lt;/DataTemplate&gt;
+            &lt;/CollectionView.ItemTemplate&gt;
+        &lt;/CollectionView&gt;
+    &lt;/RefreshView&gt;
+&lt;/ContentPage&gt;
+</code></pre>
+<p>You get a nice simple control on the page like this: (I Like planes OK&hellip;)</p>
+<p>
+  <img src="/images/DroidSample.gif" alt="WizzyStuff">
+
+</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This is a simple control and one that means you can cram more information onto the screen by allowing the user to expand an item rather than tap to goto a details page.</p>
+<p>It&rsquo;s been missing from Xamarin.Forms for a while if you ask me but thanks to the Hard work of Andrei Misiukevich a community member Like you and me it has been added to the Xamarin toolset for us all to enjoy.</p>
+<p>I&rsquo;m already using it in a live project and so far the testing hasn&rsquo;t shown any issues so that Experimental flag may not be around forever, however if you want to see what flags are active for the current Stable release then check out <a href="https://docs.microsoft.com/xamarin/xamarin-forms/internals/experimental-flags?WT.mc_id=DOP-MVP-5003764">docs.microsoft.com</a></p>
+<p>I hope this helped and feel free to reach out in the usual places or leave a message below.</p>
+<p>Oh! And if your wondering why I picked Brown for the colour of the Header elements&hellip; Well anyone that&rsquo;s seen a Boeing Flightdeck (Other than the 787) knows of the Boeing ermmm Brown&hellip; ;-)</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/ideasforvisualstudiotools/" data-toggle="tooltip" data-placement="top" title="Ideas For a Visual Studio Tool">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
