@@ -153,7 +153,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/static/images/ForkingTheRepo.png')
+        background-image: url('/images/ControlsGallery.png')
     }
 </style>
 <header class="intro-header">
@@ -233,12 +233,12 @@
 <h2 id="step-2-clone-the-repository">Step 2: Clone the Repository</h2>
 <p>First you need to Fork the Xamarin.Forms repository so go to GitHub page and click the Fork button top right.</p>
 <p>
-  <img src="/static/images/ForkingTheRepo.png" alt="Forking the Repo">
+  <img src="/images/ForkingTheRepo.png" alt="Forking the Repo">
 
 </p>
 <p>Now you need to get a local copy to work on so once the Fork process is completed you should be on YOUR github repositories page and you can tell this as your Github name will be top left with the &ldquo;Forked from xamarin/Xamarin.Forms&rdquo; below.</p>
 <p>
-  <img src="/static/images/Cloning.png" alt="Cloning the Repo">
+  <img src="/images/Cloning.png" alt="Cloning the Repo">
 
 </p>
 <p>So click the big green Clone or Download button to get the URL and head to your favorite Git Client.</p>
@@ -249,7 +249,7 @@
 </code></pre>
 <p>And it should look like this when it&rsquo;s done.</p>
 <p>
-  <img src="/static/images/GitClone.png" alt="Git Clone">
+  <img src="/images/GitClone.png" alt="Git Clone">
 
 </p>
 <h2 id="step-3-add-links-to-the-remote">Step 3: Add links to the Remote</h2>
@@ -266,7 +266,7 @@
 </code></pre>
 <p>Which should give you something like this:</p>
 <p>
-  <img src="/static/images/remotescheck.png" alt="Remotes Check">
+  <img src="/images/remotescheck.png" alt="Remotes Check">
 
 </p>
 <p>This shows
@@ -275,7 +275,7 @@
 <h2 id="step-4-the-fun-part">Step 4: The fun part</h2>
 <p>Now you have all you need to fire up VisualStudio and poke around the code. But lets explain all those projects first.</p>
 <p>
-  <img src="/static/images/XFSolutionExplorer.png" alt="Solution Explorer">
+  <img src="/images/XFSolutionExplorer.png" alt="Solution Explorer">
 
 </p>
 <ul>
@@ -294,11 +294,11 @@
 <h2 id="step-5-pick-a-bug-to-fix">Step 5: Pick a Bug to fix</h2>
 <p>Head back to the <a href="https://github.com/xamarin/Xamarin.Forms/issues?WT.mc_id=OSS-MVP-5003764">Xamarin.Forms Github Issues page</a> and look for an issue to fix.  There are many labels used in the project but a good place to start is with:</p>
 <p>
-  <img src="/static/images/HelpWanted.png" alt="HelpWanted">
+  <img src="/images/HelpWanted.png" alt="HelpWanted">
 
 
 
-  <img src="/static/images/upforgrabs.png" alt="UpForGrabs">
+  <img src="/images/upforgrabs.png" alt="UpForGrabs">
 
 </p>
 <p>Find the one you want to help with and in the issue there should be some notes on the problem and some steps to re-produce the fault. I suggest that you leave a comment to say that you have picked this issue up so that you don&rsquo;t end up with more than one person fixing the same thing.</p>
@@ -315,7 +315,7 @@ git push origin master
 <p>Now you have worked out where you want to help and created a branch for the fix and it&rsquo;s time to implement the magic.</p>
 <p>Within the solution find the following:</p>
 <p>
-  <img src="/static/images/ControlsGallery.png" alt="Controls Gallery">
+  <img src="/images/ControlsGallery.png" alt="Controls Gallery">
 
 </p>
 <p>Inside the Xamarin.Forms.Controls.Issues.Shared create a new class named after your issue, so to match your branch and in this sample case Issue5168.  The easiest way to honestly do this is to create a copy of an issue like yours and rename it.  However as a template this should work for you:</p>
@@ -387,11 +387,11 @@ Preserve(AllMembers = true)]
 <p>The important part here is at the top of the class there are class attributes that give the class an Issue to track and also some text on what the issue is.  The purpose of this class is to build a minimal UI in code to reproduce the error.  From this you then build/edit the UITests to prove the error and fix the code to stop the error.</p>
 <p>Once you have this class written select your chosen device and run the Control Gallery target, within this you can select Goto Test Cases and find your reproduction.</p>
 <p>
-  <img src="/static/images/DroidGalleryLoaded.png" alt="Test case loaded">
+  <img src="/images/DroidGalleryLoaded.png" alt="Test case loaded">
 
 
 
-  <img src="/static/images/FindBugRepo.png" alt="Find your issue">
+  <img src="/images/FindBugRepo.png" alt="Find your issue">
 
 </p>
 <p>Once you have your text case written such that you can prove the issue it&rsquo;s time to work your magic and fix the issue.  For fixing refer the to the project layout detailed above, not forgetting that you should ideally add UITests so that in the future the tests being run can prove the issues have not re-surfaced.</p>
@@ -405,7 +405,7 @@ Preserve(AllMembers = true)]
 </code></pre>
 <p>But you nailed it on the first pass (Ok maybe the 2nd!) and you have a fix to share with the world.  Go back to your fork on GitHub in the browser and click the new green button &ldquo;Compare &amp; Pull request&rdquo;.</p>
 <p>
-  <img src="/static/images/Creatingtheforkpr.png" alt="Compare and Pull request">
+  <img src="/images/Creatingtheforkpr.png" alt="Compare and Pull request">
 
 </p>
 <p>This will create the pull request with the main project and give you the option to add some details on what you have done, please complete the template with as much detail as you can as this will help the case of your PR being accepted.  Once you are happy all the parts are in place click the &ldquo;Create Pull Request&rdquo;</p>
