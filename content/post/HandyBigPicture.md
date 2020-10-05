@@ -38,7 +38,6 @@ Let's remember that the NHS won't offer Kayden or any other children a full arm 
     <video src="/images/MakingACuppa.mp4" controls> </video>
 {{< /rawhtml >}}
 
-
 The blog title is the "Big Picture" as it occurred to me very early on that there is very little provision in the UK for children's prosthetics as they tend to grow too quick. If the NHS here can't or won't provide mainly due to costs then what are other parts of the world like?  My day job when not writing code as a freelance .NET/Xamarin developer is to Fly a Boeing 787 around the world, in fact I am currently writing this from the crew rest area on a flight back to the UK.
 
 On my many travels I go to many countries that have even less provisions than the UK so I have made it a mission of this project to not only provide Kayden with a working arm but to do so with easily available parts at the cheapest price.  My ultimate dream once Kayden and his family are happy is to provide all the designs and a Bill Of Materials so that it can be repeated by anyone around the world, maybe even get funding to send kits.
