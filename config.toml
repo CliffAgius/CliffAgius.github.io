@@ -37,7 +37,7 @@ home = ["HTML", "RSS"]
   algolia_apiKey = ""
 
   # Sidebar settings
-  sidebar_about_description = "Freelance Software Developer in the Dotnet and IOT space, International Speaker and when not doing all that I am a Boeing 787 Pilot for a Major UK Airline. "
+  sidebar_about_description = "Freelance Software Developer in the Dotnet and IOT space, International Speaker and when not doing all that I am a Boeing 787 Pilot for a Major UK Airline. I'm here Blogging about flying the B787 around the world as well as being a .NET developer in the Xamarin/C#/IOT space. Have a question about any of that send them over I will try my best..."
   #sidebar_avatar = "/img/ProfilePic.jpg"      # use absolute URL, seeing it's used in both `/` and `/about/`
   sidebar_avatar = "/img/ProfilePic.JPG"      # use absolute URL, seeing it's used in both `/` and `/about/`
 
