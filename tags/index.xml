@@ -6,7 +6,16 @@
     <description>Recent content in Tags on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sun, 06 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 03 Mar 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xamarin</title>
+      <link>https://cliffagius.github.io/tags/xamarin/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/tags/xamarin/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>IOT 3DPrinting</title>
       <link>https://cliffagius.github.io/tags/iot-3dprinting/</link>
@@ -22,15 +31,6 @@
       <pubDate>Mon, 23 Sep 2019 00:00:00 +0000</pubDate>
       
       <guid>https://cliffagius.github.io/tags/iot/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Xamarin</title>
-      <link>https://cliffagius.github.io/tags/xamarin/</link>
-      <pubDate>Sat, 21 Sep 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://cliffagius.github.io/tags/xamarin/</guid>
       <description></description>
     </item>
     
