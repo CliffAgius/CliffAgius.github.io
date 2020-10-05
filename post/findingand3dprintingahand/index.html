@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/Banner.png">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/Banner.png" />
+    
+
+    
+    <meta name="title" content="Finding and 3D Printing a Hand" />
+    <meta property="og:title" content="Finding and 3D Printing a Hand" />
+    <meta property="twitter:title" content="Finding and 3D Printing a Hand" />
+    
+
+    
+    <meta name="description" content="Finding a hand design that works and how we went about 3D printing and making it fit...">
+    <meta property="og:description" content="Finding a hand design that works and how we went about 3D printing and making it fit..." />
+    <meta property="twitter:description" content="Finding a hand design that works and how we went about 3D printing and making it fit..." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Finding and 3D Printing a Hand-</title>
+
+    <link rel="canonical" href="/post/findingand3dprintingahand/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.css">
+
+    
+    
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/iot">iot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/BrunelHandParts.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/iot-3dprinting" title="IOT 3DPrinting">
+                            IOT 3DPrinting
+                        </a>
+                        
+                    </div>
+                    <h1>Finding and 3D Printing a Hand</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                Clifford Agius | CA-Software Ltd
+                         
+                        on 
+                        Sunday, October 6, 2019
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#finding-and-3d-printing-a-hand">Finding and 3D Printing a Hand</a>
+      <ul>
+        <li><a href="#tldr">TLDR</a></li>
+        <li><a href="#next-electronics-for-control">Next: Electronics for Control</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="finding-and-3d-printing-a-hand">Finding and 3D Printing a Hand</h1>
+<h2 id="tldr">TLDR</h2>
+<p>This is a long post as it&rsquo;s the back story to the whole project and how it came about to getting a design for the hand, it covers the 3D design and printing as well as the problems along the way.  Don&rsquo;t worry if your here hoping to see code and electronics or even the Xamarin App thats coming soon, I just need to explain where the Handy design came from first.  Plus I have noticed that giving talks around the world most people find the 3D printing side very interesting.</p>
+<h3 id="last-time-out">Last Time Out</h3>
+<p>So last time out it was about the big picture behind this project and that I really want to be able to not only provide Kayden with a working arm but along the way come up with a workable design and processes that can be used by others.  This means that the design needs to be fairly simple and cheap to build but as always we still want the best we can get.</p>
+<p>So now I had decided that I was going to help (Well kind of fooled into lending a hand!) I got really into the idea of what could be done and started my searches of the Wonderful Wide Web looking for the design used by that dad that was in the media.</p>
+<p>Search the web as always turns up many things but starting with what the NHS can offer was my first port of call just to see if there was something that could be copied.  Finding a website for the Limbless Association I thought I had hit the right place they will have all the links but, and bearing in mind I was doing this 2016 so some years ago take a look at this site</p>
+<p><a href="http://www.limbless-association.org/index.php/directory/links">http://www.limbless-association.org/index.php/directory/links</a></p>
+<p>You will notice (I just checked again) that the site is under construction still and has been for years, so it&rsquo;s either some really complex amazing design or it&rsquo;s been forgotten about after funding dried up.  Either way it&rsquo;s not ideal, so more searching found the Team Unlimbited website</p>
+<p><a href="http://enablingthefuture.org/team-unlimbited-arm/">http://enablingthefuture.org/team-unlimbited-arm/</a></p>
+<p>This was the design that was printed by the Dad in the media, so looking around at these designs I found one that would work and connect to Kaydens existing arm, this means that the Hospital supplied arm would still be used but in the place of the Hook there would be a Hand.  This hand would use the same mechanism as that Hook but be hand shaped and 3D printed.  SHowing this design the Kayden and his family they didn&rsquo;t really see any benefit over the existing hook and thought being plastic it would just break quicker, but we thought for the price of a few meters of filament it was worth printing one out.</p>
+<h3 id="fire-up-the-3d-printer">Fire up the 3D Printer</h3>
+<p>Now back then my printer was an original RepRap Mendle which is the brain child of Professor Adrian Bower, the RepRap printers are designed such that they can print majority of their own parts.  This means that you build a printer using parts printed on another printer and the first thing you set about printing is spares for yourself and extra to sell to the next person along the chain.  The design is very impressive and means the printers are very cheap but the simple early design made affected the print quality, think Dot Matrix era and your not far off.</p>
+<p>
+  <img src="/images/FIrstPrototype.jpg" alt="Green Hand Prototype">
+
+</p>
+<p>We got a hand printed and assembled and with some post printing finishing using sand paper and acetone it wasn&rsquo;t that bad but that work too quite a while and wasn&rsquo;t ideal.  But we had a prototype and using some heavy duty fishing wire we connected it to Kaydens arm and got him to try it out, it was clear within a few minutes he hated it.  The problem was that the hand did the same as the hook but with less control and dexterity so it was back to the drawing board.</p>
+<h3 id="open-hand-project">Open Hand Project</h3>
+<p>More searching I came across a design by Joel Gibbard from the Open Hand Project (<a href="http://www.openhandproject.org/)">http://www.openhandproject.org/)</a> this was a motorized unit with some basic control and the start of something.  Following the design it turned out it was OpenSource as well (Hence Open I guess!!) and the community was active, so I dived in and started to play with things.  Now that I was trying to print smaller and more complex parts I was reaching the limit of what my now wobbly old printer could manage&hellip; Yes I could do the same post print sanding etc but as mentioned before I want this project to be repeatable with very little effort so I needed a new idea.</p>
+<p>
+  <img src="/images/RoughtPrint.jpg" alt="Rought Print">
+
+</p>
+<h3 id="prusa-printer">Prusa Printer</h3>
+<p>So what do you do when the tech dosn&rsquo;t cut it anymore&hellip; you upgrade of course, and I had been searching for an excuse to upgrade for a while and this was one I could get past management (AKA the Wife) as it was for a good cause.  So I ordered my Prusa Mk3 and started building, this printer and it&rsquo;s predecessor was winning awards for it&rsquo;s abilities and priced at just £800 for the kit it was ideal.  The printers are now even cheaper at around £700 and take about a day to build with basic DIY skills. <a href="https://shop.prusa3d.com/en/3d-printers/180-original-prusa-i3-mk3-kit.html">https://shop.prusa3d.com/en/3d-printers/180-original-prusa-i3-mk3-kit.html</a></p>
+<blockquote>
+<p>Side note if you have never used a 3D Printer before or your considering buy a replacement like I have then I can not recommend Prusa printers highly enough, not only is the price reasonable but they are such capable printers and work perfect out of the box.  Trust me you won&rsquo;t regret it&hellip;</p>
+</blockquote>
+<p>
+  <img src="/images/PrusaPrinterBuild.jpg" alt="Prusa Printer Build">
+
+</p>
+<p>While I wait a few months for my printer to arrive from Poland (It was the new design I was waiting for&hellip;) I was watching the project and noticed that it had moved on to become OpenBionics (<a href="http://www.OpenBionics.co.uk)">http://www.OpenBionics.co.uk)</a> and the designs had moved along to produce initially the Ada Hand and then the Brunel.  The Brunel hand looked perfect it was controlled with 4 motors had some Arduino controller inside and the codebase like the 3D design was all open source on GitHub to play with.</p>
+<h3 id="building-brunel">Building Brunel</h3>
+<p>Printer now build I set about printing the first of many Brunel Hands and obtaining all the parts listed in the BOM (Bill Of Materials)</p>
+<p>
+  <img src="/images/BrunelHandParts.jpg" alt="Printed Parts">
+
+</p>
+<p>So all the mechanical parts were printed and as you can see in the image there are two colours printed, the White plastic is hard like Lego and is printed from a material called PLA this is produced from vegetable extract.  The Red parts are printed in a flexible material as they act as the Ligament to hold the hand together, being flexible these are a little harder to print but the Prusa printer nailed it first time something that would have taken many attempts on my old printer.</p>
+<p>
+  <img src="/images/BrunelAssembled.jpg" alt="Assembled Hand">
+
+
+
+  <img src="/images/BrunelAssembled2.jpg" alt="Assembled Hand">
+
+</p>
+<h3 id="finished-mechanical-build">Finished Mechanical Build</h3>
+<p>Now the eagle eyed amoung you will look at the image above and notice that the finger pads on the Distal&rsquo;s, that&rsquo;s the last finger bone where the finger nail lives, and the fleshy bit on the Proximal the middle of the finger are a bit weird.  The reason these are not fully printed is that the Hard PLA plastic would make gripping things difficult as it&rsquo;s like lego so smooth and slippy, the way the OpenBionics team get around this is to mould onto the Distal and Proximal&rsquo;s as well as the Palm of the hand a Urethane material that is kind of soft and squishy rubber a bit like the band that holds your swimming googles on your head.</p>
+<p>This needed some moulds to be printed but as I was just getting the hand working and controlling it I left this on my Beta version until much later, the Urethane material costs about £50 and has a shelf life of only a few weeks once opened, so I wanted to be able to mould a few hands at a time to reduce the cost per hand.</p>
+<h3 id="costs-so-far">Costs so far</h3>
+<p>Discounting the need to upgrade the printer which was £800 the costs of material so far for the Plastic parts is impressivly low, 3D printing material is purchased in spools typically 1Kg in weight and the PLA spool is more than enough to print the parts for 3 Hands.  The Moulds need for the Utherane is printed in PETG which is a stronger material and ideal for larger prints and as mentioned the felxible parts from FlexFill 98A.  Breaking the costs out for the parts here you can see that other than a bit of electricity for the long print times the costs are impressive and the weight of the parts very light for a child to hold.</p>
+<p>The Moulds shown here once printed can be re-used many times so only need printing the once if they are looked after, again reducing costs.</p>
+<p>
+  <img src="/images/PrintCosts.jpg" alt="Printing Costs">
+
+</p>
+<h2 id="next-electronics-for-control">Next: Electronics for Control</h2>
+<p>Lets get things moving.</p>
+
+
+    <video src="/images/HandyOK.mp4" controls> </video>
+
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/handybigpicture/" data-toggle="tooltip" data-placement="top" title="Handy the Big Picture!">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>IoT on Clifford Agius | CA-Software Ltd</title>
+    <title>IOT on Clifford Agius | CA-Software Ltd</title>
     <link>https://cliffagius.github.io/categories/iot/</link>
-    <description>Recent content in IoT on Clifford Agius | CA-Software Ltd</description>
+    <description>Recent content in IOT on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/categories/iot/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/categories/iot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Finding and 3D Printing a Hand</title>
+      <link>https://cliffagius.github.io/post/findingand3dprintingahand/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/findingand3dprintingahand/</guid>
+      <description>Finding and 3D Printing a Hand TLDR This is a long post as it&amp;rsquo;s the back story to the whole project and how it came about to getting a design for the hand, it covers the 3D design and printing as well as the problems along the way. Don&amp;rsquo;t worry if your here hoping to see code and electronics or even the Xamarin App thats coming soon, I just need to explain where the Handy design came from first.</description>
+    </item>
+    
     <item>
       <title>Handy the Big Picture!</title>
       <link>https://cliffagius.github.io/post/handybigpicture/</link>

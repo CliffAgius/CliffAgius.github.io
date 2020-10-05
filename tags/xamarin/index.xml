@@ -36,17 +36,5 @@ So the first job is to get the custom font pack from the design team or the web 
       <description>Live Player v Live Reload. So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again. Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes Xamarin.</description>
     </item>
     
-    <item>
-      <title>Live Player V Live Reload</title>
-      <link>https://cliffagius.github.io/post/my-first-post/</link>
-      <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://cliffagius.github.io/post/my-first-post/</guid>
-      <description>categories: This is the are to place the post under that is part of the menu at the top so Limited to IOT/XAMARIN/Aviation/Speaking
-Tags: These are the tags that get shown on the side menu of the front page of the blog so go wild&amp;hellip;
-My First Page This is the first blog page tp check it&amp;rsquo;s all working&amp;hellip;
-Images Images go into the /Static/Images folder and get referenced like so?</description>
-    </item>
-    
   </channel>
 </rss>

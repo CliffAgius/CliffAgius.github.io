@@ -6,7 +6,16 @@
     <description>Recent content in Posts on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 23 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 06 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Finding and 3D Printing a Hand</title>
+      <link>https://cliffagius.github.io/post/findingand3dprintingahand/</link>
+      <pubDate>Sun, 06 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/findingand3dprintingahand/</guid>
+      <description>Finding and 3D Printing a Hand TLDR This is a long post as it&amp;rsquo;s the back story to the whole project and how it came about to getting a design for the hand, it covers the 3D design and printing as well as the problems along the way. Don&amp;rsquo;t worry if your here hoping to see code and electronics or even the Xamarin App thats coming soon, I just need to explain where the Handy design came from first.</description>
+    </item>
+    
     <item>
       <title>Handy the Big Picture!</title>
       <link>https://cliffagius.github.io/post/handybigpicture/</link>
@@ -44,18 +53,6 @@ So the first job is to get the custom font pack from the design team or the web 
       
       <guid>https://cliffagius.github.io/post/liveplayervlivereload/</guid>
       <description>Live Player v Live Reload. So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again. Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes Xamarin.</description>
-    </item>
-    
-    <item>
-      <title>Live Player V Live Reload</title>
-      <link>https://cliffagius.github.io/post/my-first-post/</link>
-      <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://cliffagius.github.io/post/my-first-post/</guid>
-      <description>categories: This is the are to place the post under that is part of the menu at the top so Limited to IOT/XAMARIN/Aviation/Speaking
-Tags: These are the tags that get shown on the side menu of the front page of the blog so go wild&amp;hellip;
-My First Page This is the first blog page tp check it&amp;rsquo;s all working&amp;hellip;
-Images Images go into the /Static/Images folder and get referenced like so?</description>
     </item>
     
   </channel>
