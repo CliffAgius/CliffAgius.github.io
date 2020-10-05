@@ -26,6 +26,16 @@
     </item>
     
     <item>
+      <title>Ideas For a Visual Studio Tool</title>
+      <link>https://cliffagius.github.io/post/ideasforvisualstudiotools/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/ideasforvisualstudiotools/</guid>
+      <description>Idea for a VisualStudio Tool for Xamarin In my last blog I wrote about all the different image sizes required for a Xamarin project and how to calculate them and size them and where to put them, it&amp;rsquo;s all very confusing when you first start out in mobile development so I hope that post helped&amp;hellip;
+Recently (2019!) I was working on a standalone UWP project for a new instructor control station in the Mobile Flight Sim I helped to build, this sim is used by the airline I work for at School STEM events, Recruitment and fun corporate events.</description>
+    </item>
+    
+    <item>
       <title>Working with Images in Xamarin.Forms </title>
       <link>https://cliffagius.github.io/post/workingwithimagesinxamarin/</link>
       <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
