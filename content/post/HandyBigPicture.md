@@ -5,7 +5,7 @@ title:       "Handy the Big Picture!"
 subtitle:    ""
 description: "The story behind #Handy the project to build a Prothetic Hand."
 date:        2019-09-23
-image:       "/static/images/NHSUnit.png"
+image:       "/images/NHSUnit.png"
 tags:        ["IoT"]
 categories:  ["IoT" ]
 ---
@@ -14,15 +14,15 @@ categories:  ["IoT" ]
 
 Meet Kayden a Local 15 year old and the son of close friends, as you can see he is a happy teenager (They do exist!) full of fun and ready to take on the world...
 
-![Kayden](/static/images/Kayden.png)
+![Kayden](/images/Kayden.png)
 
 You may also notice that Kayden was born without a left forearm and hand and is also missing the middle fingers on his right hand, so life is a challenge at times but it's Ok the NHS (National Health Service here in the UK) are there to help free of charge (if you conveniently forget you pay TAX).  So from a very young age Kayden and his parents have been visiting hospital to be measured and fitted with a prosthetic left arm, great you may think job done whats next.
 
-![NHS Offering](/static/images/NHSoffering.png)
+![NHS Offering](/images/NHSoffering.png)
 
 Sadly these arms are exceedingly basic consisting of some heavy plastic with a heavy metal hook on the end, this attaches to Kayden with Velcro and is actuated with a wire going up his sleeve to his other shoulder.  Now this is better than nothing at all and is far more than available in many parts of the world but the UK is not a poor nation we should be able to do better.  The official line from the NHS is that will not issue a growing child a full BioMechanical prosthetic until they are an adult as they are very expensive and will outgrow it too quickly, by expensive they cost over £45,000 for a basic unit that can only move a few fingers and isn't much different from the hook anyway.
 
-![NHS Unit](/static/images/NHSUnit.png)
+![NHS Unit](/images/NHSUnit.png)
 
 ---
 
@@ -34,7 +34,10 @@ I will cover everything from the past 3 years the up's and down's as well as the
 
 Let's remember that the NHS won't offer Kayden or any other children a full arm until they are adults, but as with all humans we learn to adapt to what we have, so here is Kayden making a cup of tea using his current arm.  In this you can see that he has adapted to his hook but it's still very basic.
 
-<video src="/static/images/MakingACuppa.mp4" controls> </video>
+{{< rawhtml >}}
+    <video src="/images/MakingACuppa.mp4" controls> </video>
+{{< /rawhtml >}}
+
 
 The blog title is the "Big Picture" as it occurred to me very early on that there is very little provision in the UK for children's prosthetics as they tend to grow too quick. If the NHS here can't or won't provide mainly due to costs then what are other parts of the world like?  My day job when not writing code as a freelance .NET/Xamarin developer is to Fly a Boeing 787 around the world, in fact I am currently writing this from the crew rest area on a flight back to the UK.
 
@@ -48,6 +51,8 @@ Right my break is nearly over it's time to go grab a coffee and head back to the
 
 Oh and here is where I have managed to get to in this project...
 
-<video src="/static/images/HandyMoving.mp4" controls> </video>
+{{< rawhtml >}}
+    <video src="/images/HandyMoving.mp4" controls> </video>
+{{< /rawhtml >}}
 
 ## Next: Finding and 3D Printing a Hand.

@@ -5,7 +5,7 @@ title:       "10 steps to submitting your first Xamarin.Forms PR."
 subtitle:    ""
 description: "How to make your very first PR tp the Xamarin.Forms or any other Open Source Project on GitHub."
 date:        2019-09-21
-image:       "/static/images/ForkingTheRepo.png"
+image:       "/images/ControlsGallery.png"
 tags:        ["Xamarin"]
 categories:  ["Xamarin" ]
 ---
@@ -28,11 +28,11 @@ Here you will find details on the Code of Conduct and signing the .NET Foundatio
 
 First you need to Fork the Xamarin.Forms repository so go to GitHub page and click the Fork button top right.
 
-![Forking the Repo](/static/images/ForkingTheRepo.png)
+![Forking the Repo](/images/ForkingTheRepo.png)
 
 Now you need to get a local copy to work on so once the Fork process is completed you should be on YOUR github repositories page and you can tell this as your Github name will be top left with the "Forked from xamarin/Xamarin.Forms" below.
 
-![Cloning the Repo](/static/images/Cloning.png)
+![Cloning the Repo](/images/Cloning.png)
 
 So click the big green Clone or Download button to get the URL and head to your favorite Git Client.
 
@@ -45,7 +45,7 @@ At the command line use the copied URL like this:
 
 And it should look like this when it's done.
 
-![Git Clone](/static/images/GitClone.png)
+![Git Clone](/images/GitClone.png)
 
 ## Step 3: Add links to the Remote
 
@@ -67,7 +67,7 @@ And to confirm it's worked and we have the required remotes in place use:
 
 Which should give you something like this:
 
-![Remotes Check](/static/images/remotescheck.png)
+![Remotes Check](/images/remotescheck.png)
 
 This shows 
         - Origin which points to our forked version and we have full read/write of this.
@@ -77,12 +77,13 @@ This shows
 
 Now you have all you need to fire up VisualStudio and poke around the code. But lets explain all those projects first.
 
-![Solution Explorer](/static/images/XFSolutionExplorer.png)
+![Solution Explorer](/images/XFSolutionExplorer.png)
 
 - Controls Gallery - A basic application where you can play with the various controls.  This is also the part where you will add your Issue so that you can show it's been fixed.
 - Pages Gallery - Another test application but this time for the Pages.
 - Platforms - Where all the platform specific renderers live so when in your code you add a button if it's Droid then it will render (EDIT: Actually on Android you will now get the Fast Renderer for some controls...)
->Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs 
+
+>Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs
 
 - UITests - this one explains itself and also very important if you fix a bug start by writing a test for it the Xamarin.Forms team will love you to go Red->Green->Refactor.
 - Xamarin.Forms - These are the Core Xamarin abstract controls and other non-platform specific items.  For example in here the Button.cs would show the bindable objects etc that can be used in your application.
@@ -92,8 +93,8 @@ Now you have all you need to fire up VisualStudio and poke around the code. But 
 
 Head back to the [Xamarin.Forms Github Issues page](https://github.com/xamarin/Xamarin.Forms/issues?WT.mc_id=OSS-MVP-5003764) and look for an issue to fix.  There are many labels used in the project but a good place to start is with:
 
-![HelpWanted](/static/images/HelpWanted.png)
-![UpForGrabs](/static/images/upforgrabs.png)
+![HelpWanted](/images/HelpWanted.png)
+![UpForGrabs](/images/upforgrabs.png)
 
 Find the one you want to help with and in the issue there should be some notes on the problem and some steps to re-produce the fault. I suggest that you leave a comment to say that you have picked this issue up so that you don't end up with more than one person fixing the same thing.
 
@@ -116,7 +117,7 @@ Now you have worked out where you want to help and created a branch for the fix 
 
 Within the solution find the following:
 
-![Controls Gallery](/static/images/ControlsGallery.png)
+![Controls Gallery](/images/ControlsGallery.png)
 
 Inside the Xamarin.Forms.Controls.Issues.Shared create a new class named after your issue, so to match your branch and in this sample case Issue5168.  The easiest way to honestly do this is to create a copy of an issue like yours and rename it.  However as a template this should work for you:
 
@@ -189,8 +190,8 @@ The important part here is at the top of the class there are class attributes th
 
 Once you have this class written select your chosen device and run the Control Gallery target, within this you can select Goto Test Cases and find your reproduction.
 
-![Test case loaded](/static/images/DroidGalleryLoaded.png)
-![Find your issue](/static/images/FindBugRepo.png)
+![Test case loaded](/images/DroidGalleryLoaded.png)
+![Find your issue](/images/FindBugRepo.png)
 
 Once you have your text case written such that you can prove the issue it's time to work your magic and fix the issue.  For fixing refer the to the project layout detailed above, not forgetting that you should ideally add UITests so that in the future the tests being run can prove the issues have not re-surfaced.
 
@@ -208,7 +209,7 @@ This will push the changes to your remote fork of the project, using the -u link
 
 But you nailed it on the first pass (Ok maybe the 2nd!) and you have a fix to share with the world.  Go back to your fork on GitHub in the browser and click the new green button "Compare & Pull request".
 
-![Compare and Pull request](/static/images/Creatingtheforkpr.png)
+![Compare and Pull request](/images/Creatingtheforkpr.png)
 
 This will create the pull request with the main project and give you the option to add some details on what you have done, please complete the template with as much detail as you can as this will help the case of your PR being accepted.  Once you are happy all the parts are in place click the "Create Pull Request"
 

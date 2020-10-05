@@ -5,20 +5,19 @@ title:       "Live Player V Live Reload"
 subtitle:    ""
 description: "Comparing Live Player to the Visual Studio LiveReload"
 date:        2018-08-03
-image:       "/static/images/LiveReloadNuget.png"
+image:       "images/LiveReloadNuget.png"
 tags:        ["Xamarin"]
 categories:  ["Xamarin" ]
 ---
 
 # Live Player v Live Reload.
-So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again.  Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes [Xamarin.Forms has CSS](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css?WT.mc_id=DOP-MVP-5003764) styling now that’s awesome too give it a try...).
 
+So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again.  Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes [Xamarin.Forms has CSS](https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/styles/css?WT.mc_id=DOP-MVP-5003764) styling now that’s awesome too give it a try...).
 
 So, what is the alternative to the Build/Package/Deploy loop that will not only save you time but also your sanity...
 
 Enter two tools from the Visual Studio / Xamarin teams and they are:
 
-    
    [- Live Player](https://docs.microsoft.com/xamarin/tools/live-player?WT.mc_id=DOP-MVP-5003764)
 
    [- Live Reload](https://docs.microsoft.com/xamarin/xamarin-forms/xaml/live-reload?WT.mc_id=DOP-MVP-5003764) 
@@ -26,6 +25,7 @@ Enter two tools from the Visual Studio / Xamarin teams and they are:
 They both allow you to enter a quicker loop of make a change and see that change almost instantly for UI changes, so that change of colour can be tweaked until it's just right.
 
 ## Warnings
+
 Both LivePlayer and LiveReload are still in various stages of Preview so what is written here could and probably has changed so check the links to the Docs above for the latest updates.
 
 These are MY observations as a freelance developer of both tools having used them on real life projects over recent months and I would be interested to hear your thoughts on them in the comments at the end. 
@@ -39,7 +39,7 @@ This blog is being written while at Flight Level 400 (40,000ft) so without a web
 
 So, what is LivePLayer, this was announced at Build17 and is designed as a getting started sandbox for developers to get their ideas visualized on a device quickly (Copied straight from the Docs). 
 
-![Live Player Pairing](/static/images/xamarin-live.png)
+![Live Player Pairing](/images/xamarin-live.png)
 
 The important part here is the 'On-Device', LivePlayer works by you installing the LivePlayer app from the respective App store onto your device and then pairing it with Visual Studio (both VS17 and VS4Mac work!). Then you can run the app in debug with the Device paired and as you make changes these are visualised immediately on the device which is super cool.  The app on the device receives the XAML changes and interprets them into the view you see on screen, so this also means that for layout and UI designs you can even see the IOS screen without needing the glowing apple machine in the corner of your office.
 This last part for me when I am travelling the world has been brilliant as I can just pack my dev Droid & IOS devices and using my mini Wi-Fi router work on my projects on a beach or coffee shop somewhere around the world.
@@ -63,7 +63,7 @@ Next up and a more recent and I feel a quieter release is Live Reload, I only fo
 So Live Reload requires you to install from the Visual Studio Marketplace as an extension now, but I'm sure it will be part of VS soon. Currently it's only available for VS17 and not VS4Mac but the team say this is being worked on for a later release.
 Once you have the tooling installed for the project you need to install a NuGet package but follow the instructions on the Docs as I couldn't find it at first as the package is not on Nuget.org so you have to change your Package source to All to find it and don't forget to tick the Preview box as well (It's hidden away in there...)
 
-![Installing the NuGet](/static/images/LiveReloadNuget.png)
+![Installing the NuGet](/images/LiveReloadNuget.png)
 
 Once you have it installed for all the projects you need to add LiveReload.Init(); to the constructor in the Application class
 
@@ -119,5 +119,4 @@ As always (Yes, I know it's only my 2nd blog post!) if you have any comments the
 
 Right must go my time is up need to go do the other day job and fly the plane if your reading this I landed without incident as well...
 
-# Happy Coding...
-
+## Happy Coding...

@@ -1,21 +1,34 @@
 ---
-draft: true
+draft:      false
 layout:     post
-title: "My First Post"
-subtitle:   "Subtitle"
-description: "First post Description"
-excerpt: "This is a little excerpt of the post"
-date: 2020-09-28T18:26:57+01:00
-author:     "Clifford Agius"
-image: "https://img.zhaohuabing.com/in-post/istio-install_and_example/post-bg.jpg"
-tags:
-    - Tags
-URL: "/2017/11/04/istio-install_and_example/"
+title:       "Live Player V Live Reload"
+subtitle:    ""
+description: "Comparing Live Player to the Visual Studio LiveReload"
+date:        2018-08-03
+image:       "images/LiveReloadNuget.png"
+tags:        ["Xamarin"]
+categories:  ["" ]
 ---
 
+categories: This is the are to place the post under that is part of the menu at the top so Limited to IOT/XAMARIN/Aviation/Speaking
 
+Tags: These are the tags that get shown on the side menu of the front page of the blog so go wild...
 
 ## My First Page
 
 This is the first blog page tp check it's all working...
+
+## Images
+
+Images go into the /Static/Images folder and get referenced like so?
+
+![Name of the Image in Text](/images/imageFileName.png)
+
+## Video/MP4 files
+
+These also go into the /Static/Images Folder and get referenced like this:
+
+{{< rawhtml >}}
+    <video src="/images/MakingACuppa.mp4" controls> </video>
+{{< /rawhtml >}}
 

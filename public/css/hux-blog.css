@@ -257,7 +257,7 @@ pre code {
     font-size: 20px;
 }
 .navbar-custom .navbar-brand {
-    color: #fff;
+    color: #404040;
     padding: 20px;
     line-height: 20px;
 }
@@ -265,7 +265,7 @@ pre code {
     color: rgba(255, 255, 255, .8);
 }
 .navbar-custom .nav li a {
-    color: #fff;
+    color: #404040;
     padding: 20px;
 }
 .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
@@ -361,7 +361,7 @@ pre code {
     margin: 10px 0 0;
 }
 
-.Slogan {
+.intro-header .Slogan {
     font-weight: bold;
     text-align: center;
     margin-top: 40px;
@@ -429,9 +429,9 @@ pre code {
     margin-bottom: 10px;
 }
 .post-preview>.post-meta {
-    font-family: Lora, 'Times New Roman', serif;
-    color: gray;
-    font-size: 16px;
+    /* font-family: Lora, 'Times New Roman', serif; */
+    color: grey;
+    font-size: 12px;
     font-style: italic;
     margin-top: 0;
 }
@@ -453,7 +453,7 @@ pre code {
     font-size: 16px;
 }
 .post-preview .post-meta {
-    font-size: 18px;
+    font-size: 12px;
 }
 }.post-content-preview {
     font-size: 13px;
