@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/Banner.png">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/Banner.png" />
+    
+
+    
+    <meta name="title" content="Dot Net 5 Thoughts" />
+    <meta property="og:title" content="Dot Net 5 Thoughts" />
+    <meta property="twitter:title" content="Dot Net 5 Thoughts" />
+    
+
+    
+    <meta name="description" content="These are my first thoughts on the upcoming Dot Net 5 release from reading the Microsoft Blogs.">
+    <meta property="og:description" content="These are my first thoughts on the upcoming Dot Net 5 release from reading the Microsoft Blogs." />
+    <meta property="twitter:description" content="These are my first thoughts on the upcoming Dot Net 5 release from reading the Microsoft Blogs." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Dot Net 5 Thoughts-</title>
+
+    <link rel="canonical" href="/post/dotnet5thoughts/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.css">
+
+    
+    
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/iot">iot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+                        <li><a href="/top/flying/">Flying</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/Net5-Unified-Platform.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/xamarin-maui-.net" title="Xamarin MAUI .NET">
+                            Xamarin MAUI .NET
+                        </a>
+                        
+                    </div>
+                    <h1>Dot Net 5 Thoughts</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                Clifford Agius | CA-Software Ltd
+                         
+                        on 
+                        Tuesday, October 6, 2020
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#net-5-thoughts">.Net 5 Thoughts</a>
+      <ul>
+        <li><a href="#net-currently">.Net Currently</a></li>
+        <li><a href="#what-is-net-5-then">What is .Net 5 then?</a></li>
+        <li><a href="#why-is-it-called-net5-and-not-net-core-4">Why is it called .Net5 and not .Net Core 4</a></li>
+        <li><a href="#so-whats-happening-to-framework-48x">So whats happening to Framework 4.8.X</a></li>
+        <li><a href="#but-if-i-switch-how-do-i-target-windows-registry-or-wpf">But If I Switch how do I target Windows Registry or WPF</a></li>
+        <li><a href="#im-sold-how-do-i-switch">I&rsquo;m Sold how do I switch?</a></li>
+        <li><a href="#whats-happening-to-net-std20">Whats happening to .NET Std2.0</a></li>
+        <li><a href="#how-is-support-going-to-work">How is Support going to work?</a></li>
+        <li><a href="#tooling">Tooling</a></li>
+        <li><a href="#ok-what-about-xamarin-and-whats-this-maui-thing">OK what about Xamarin and whats this MAUI thing?</a></li>
+        <li><a href="#current-xamarinforms">Current Xamarin.Forms</a></li>
+        <li><a href="#bcl-integration">BCL Integration</a></li>
+        <li><a href="#what-about-xamarinios-and-xamarinandroid">What about Xamarin.IOS and Xamarin.Android?</a></li>
+        <li><a href="#new-stuff-with-maui">New stuff with MAUI</a></li>
+        <li><a href="#final-thoughts">Final Thoughts</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="net-5-thoughts">.Net 5 Thoughts</h1>
+<p>As .Net5 is just around the corner scheduled release at <a href="https://www.dotnetconf.net?WT.mc_id=DOP-MVP-5003764">.Net Conf 2020</a> which is November 10-12 I thought I would write a bit about my thoughts and what I have found about the up coming changes.</p>
+<p>Now these are my thoughts (Hence the name!) but is based on Docs/Blogs/Podcasts/Meet-ups from Microsoft Team members but for the best and latest news take a look at the <a href="https://dotnet.microsoft.com/download/dotnet/5.0?WT.mc_id=DOP-MVP-5003764">.Net Downloads Page</a> for the latest release notes and roadmap.</p>
+<h2 id="net-currently">.Net Currently</h2>
+<p>At the moment .Net as we call it is made up of lots of different parts as I am sure you know, we have the <a href="https://dotnet.microsoft.com/download/dotnet-framework?WT.mc_id=DOP-MVP-5003764">Framework currently 4.8.2</a> as well as <a href="https://docs.microsoft.com/en-us/dotnet/core/about?WT.mc_id=DOP-MVP-5003764">Core 3.1</a> but we also have other parts along for the ride like <a href="https://www.mono-project.com/">Mono</a> which is used by Xamarin to bring .Net to Mobile and IoT boards like <a href="https://www.wildernesslabs.co/">Wilderness Labs Meadow</a> (Very cool go take a look I’ll wait here&hellip;)</p>
+<p>if your wondering why its lots of parts well Framework is the original Dot Net and core is its sibling built make Dot NET more cross platform.  Mono.Net was gained by Microsoft when they purchased Xamarin in 2016 so lots of balls for the Dot NET team to juggle.</p>
+<h2 id="what-is-net-5-then">What is .Net 5 then?</h2>
+<p>Well it&rsquo;s being pushed by Microsoft as .Net Core vNext so the next iteration of Core but with additional Framework API&rsquo;s and the best parts of Mono brought in as well like the Mono AOT Compiler and the ability for your app to target other platforms like Mobile, Mac/IOS, Linux and even Web Assembly via Blazor. They are also adding new API features especially in CoreFX and Arm64 support.</p>
+<p>This means that if your next project is Net5 it can truly run anyway from Desktop to Mobile even IOT how cool is that&hellip; All while using your favourite developer IDE and tooling.</p>
+<p>
+  <img src="/images/Net5-Unified-Platform.jpg" alt="Net5-Unified-Platform">
+
+</p>
+<p><a href="https://dotnet.microsoft.com/download/dotnet/5.0?WT.mc_id=DOP-MVP-5003764">Net5 preview 8</a> released August 25th 2020 and is planned to be the last preview release as after all we are getting close to November so expect an RC along soon.</p>
+<p>These .Net5 beta releases also include the new toys of C#9 and F#5 and the Microsoft team have said that this latest release is feature complete so it&rsquo;s just bugs and performance tuning before we see RC1.</p>
+<h2 id="why-is-it-called-net5-and-not-net-core-4">Why is it called .Net5 and not .Net Core 4</h2>
+<p>Well as there is the full fat Framework 4.8.X already and the plan was to replace this for new projects with the new vNext of core they have skipped the number 4 and gone straight to 5, which makes sense and stops all the confusion of .Net 4 and not knowing if it was Core or Framework.  Yes..Yes I know there was a .Net Framework 3.X but I&rsquo;m not the one deciding this and anyway it makes sense to me so I&rsquo;m happy.</p>
+<h2 id="so-whats-happening-to-framework-48x">So whats happening to Framework 4.8.X</h2>
+<p>This I think is the clever part by Microsoft as they have decided to leave it alone and only patch it for Security fixes, so it&rsquo;s not getting any of the new performance tweaks or toys but it&rsquo;s stable so why rock the boat. Also, Framework is used by a lot of Enterprise and is baked into Windows 10 and on the release cycle with Windows which means this decision gives stability and allows backwards compatibility of all the legacy Apps out there.</p>
+<p>This means if your App is currently targeting Framework and your just in support mode or making minor tweaks the recommendation is to stay there and carry on nothing to see here thanks for reading this far.</p>
+<p>However if your Project is .Net3.1, your starting a new project or you want to make bigger changes like moving to the cloud, adding Microservices&hellip; OR just maybe your feeling it&rsquo;s time for that Big Re-Write (in which case watch this first ;-) Turn the volume up.)</p>
+<p><a href="https://www.bing.com/videos/search?q=youtube+dylan+beattie+big+rewrite&amp;&amp;view=detail&amp;mid=B86C63DC5A3FB8EA0E38B86C63DC5A3FB8EA0E38&amp;&amp;FORM=VRDGAR&amp;ru=%2Fvideos%2Fsearch%3Fq%3Dyoutube%2520dylan%2520beattie%2520big%2520rewrite%26qs%3Dn%26form%3DQBVDMH%26sp%3D-1%26pq%3Dyoutube%2520dylan%2520beattie%2520big%2520rewrite%26sc%3D0-33%26sk%3D%26cvid%3D0017DD0D8CC44B45903172E72AEA2B48">DylanBeatie-BigReWrite</a></p>
+<h2 id="but-if-i-switch-how-do-i-target-windows-registry-or-wpf">But If I Switch how do I target Windows Registry or WPF</h2>
+<p>If your starting a new project and you really do want/need to target some part of windows that is specific like using existing skills to build a new WPF app or you need to read/write to the registry well you can still do that with .Net 5.</p>
+<p>The same goes for if you want to target some special element of say Linux, Tizen, MacOS etc all you do is pull in the NuGet for that specific part so for example to build a Windows WPF app you grab the <a href="https://www.nuget.org/packages/Microsoft.WindowsDesktop.App.Ref/">Windows Desktop NuGet</a> and carry on as you were.</p>
+<p>This does mean that pulling that specific NuGet your app is now taking a dependency on that OS and is no longer cross platform but if your doing this you really don&rsquo;t care and that is the beauty of the .Net set-up going forward.</p>
+<h2 id="im-sold-how-do-i-switch">I&rsquo;m Sold how do I switch?</h2>
+<p>The plan as I understand from Microsoft is that switching from Core 3.1 to .Net5 is going to be as simple as a change to the .csproj and looking at the Beta releases it looks like they are sticking to this other than a few edge cases like WinRT. But this is still Beta so you might want to <a href="https://dotnet.microsoft.com/download/dotnet/5.0?WT.mc_id=DOP-MVP-5003764">check the release notes</a> before switching.</p>
+<p>But lets say your ready to switch, head into you .csproj and where you see the Target Framework Moniker (TFM) <!-- raw HTML omitted -->NetCoreApp3.1<!-- raw HTML omitted --> you simply change this to  <!-- raw HTML omitted -->net5.0<!-- raw HTML omitted --></p>
+<p>Even better if your planning to target Windows specifically you can also add to the TFM so that it targets that specific OS which means you can use</p>
+<pre><code>net5.0-windows
+net5.0-windows10.0.17763    &lt;- Targets that specific release.
+</code></pre>
+<p>These TFM&rsquo;s will grow with the move to .Net 6 November 2021 when Xamarin is fully integrated (More on that in a moment) and things like below will be possible:</p>
+<pre><code>net6.0-ios
+net6.0-android
+net6.0-ios14
+</code></pre>
+<p>These will all be possible and the full list I have not found yet but would be interested if you stumble upon it.</p>
+<h2 id="whats-happening-to-net-std20">Whats happening to .NET Std2.0</h2>
+<p>Net STD 2.0 is kind of disappearing in a way or at least feels like its going to fade into the background as Net5 is fully Cross Platform so anything that targets Net5 works everywhere unless of course you take a NuGet dependency like above. So, all Net5 Library’s will run in all Net 5 projects this makes Standard kind of redundant going forward.</p>
+<h2 id="how-is-support-going-to-work">How is Support going to work?</h2>
+<p>.Net 5 will become Net Current so not LTS and Net 6 will be the LTS release. Going forward .Net will be released every November and all Even numbered releases will be LTS so your support will be for those releases. As .Net 5 is not LTS this means when .Net 6 is released in November 2021 you have 90 days to move over for support. If you want to check the support for any of the releases they can be seen <a href="https://dotnet.microsoft.com/platform/support/policy/dotnet-core?WT.mc_id=DOP-MVP-5003764">here</a></p>
+<p>If your project is currently targeting .Net3.1 this is LTS so no need to panic as you will continue getting support until .Net 6 releases.</p>
+<h2 id="tooling">Tooling</h2>
+<p>Is VS19 changing well I don&rsquo;t know other than the normal release cadence, but there is talk of VS19 being updated at the same time and this makes sense as the tooling will change to support things like Xamarin moving to MAUI (again more on this in a bit). It could also get a bump to VS21 as it has seemed in the past to happen every 2 years. VS15/VS17/VS19 etc so makes sense to bump to VS21. But if you’re not a VS19 user don&rsquo;t fret VS4Mac and VSCode are both getting updates to allow you to target Net5 as well. ;-)</p>
+<h2 id="ok-what-about-xamarin-and-whats-this-maui-thing">OK what about Xamarin and whats this MAUI thing?</h2>
+<p>Xamarin is planned for a name change which we all expected after the purchase, so the branding police are happy.<br>
+the name picked is MAUI which stands for Multi Platform App UI and yes I didn&rsquo;t think its a great name either buts its grown on me plus they have picked it already so get used to it as its here to stay.</p>
+<p>Why the change well Xamarin is in the .NET5 to .NET6 wave which means somewhere in-between them it will be moved into the BCL.  Why is this well it&rsquo;s not going to ship with Net 5 in November due to C19 causing delays but is part of the Net5 to Net6 wave which means between Nov20 to Nov21 as say Net 5.x release but is promised to be there by .NET6</p>
+<h2 id="current-xamarinforms">Current Xamarin.Forms</h2>
+<p>Xamarin.Forms 5.0 is just in <a href="https://docs.microsoft.com/en-us/xamarin/xamarin-forms/release-notes/5.0/5.0.0-pre1?WT.mc_id=DOP-MVP-5003764">Beta release</a> and this will be the last major release of Xamarin.Forms before the move to MAUI, there will be point or minor releases every 6 weeks as normal until .Net6 releases and then support for Xamarin.Forms will continue for 1 year until November 2022 so you have time to make the switch.</p>
+<h2 id="bcl-integration">BCL Integration</h2>
+<p>Xamarin is not just changing its name but it will also no longer be a separate project but become part of the .Net Base Class Library (BCL) just like System.  <code>Xamarin.Forms</code> becomes <code>System.MAUI</code> and <code>Xamarin.Essentials</code> becomes <code>System.Devices</code> so installed as Workloads or via NuGets initially is what I believe is the plan until .Net6 when it will be fully baked in.</p>
+<p>MAUI (get used to it!) will continue to release on the same 6 week cadence as Xamarin.Forms currently does, it&rsquo;s still Open Source with a repo <a href="https://github.com/dotnet/maui?WT.mc_id=DOP-MVP-5003764">here</a> and the same great team behind the scenes. So initially it&rsquo;s just a Name change and integration into the BCL, but there will be some breaking changes as the team take the opportunity to fix up some old scars.</p>
+<h2 id="what-about-xamarinios-and-xamarinandroid">What about Xamarin.IOS and Xamarin.Android?</h2>
+<p><code>Xamarin.IOS</code> becomes <code>.Net for IOS</code> and <code>Xamarin.Android</code> becomes <code>.Net for Android</code> nothing changes with these other than the name as they are the SDK&rsquo;s shipped from Apple/Google and to target these directly you will be able to set the Target Framework in the .csproj to net6.x-ios and net6.x-android as shown earlier they are even looking to support OS specific releases using a TFM of say net6.x-ios14.</p>
+<h2 id="new-stuff-with-maui">New stuff with MAUI</h2>
+<p>MAUI becoming part of the BCL and closer integration with .NET means the team can add some new toys and one of these is the addition and support for not just MVVM and XAML as we have now but a new MVU or Model-View-Update pattern using Fluent C#.</p>
+<p>There are many discussions on other things to add and change in the move and these are all happening on the <a href="https://github.com/dotnet/maui?WT.mc_id=DOP-MVP-5003764">MAUI Repo</a> so head over and take a look.</p>
+<h2 id="final-thoughts">Final Thoughts</h2>
+<p>Well really there is not much we can do it&rsquo;s coming and it&rsquo;s the future so get onboard is the message, but for me the fact that it&rsquo;s a big unification of all these parts of Dot Net and cleans up all the different projects is great news. Soon if you&rsquo;re a Dot Net developer you can truly say that you can write code that can target anything from a Windows Box to the Cloud, from Mobile to the XBox and even IOT all using existing skills and knowledge.  That for me is the exciting thing, I&rsquo;ve been doing Mobile and IOT work for a number of years now as they are areas I know and Love but now any developer that knows Dot Net can target ALL the things&hellip;</p>
+<p>Covid (Yes that had to be mentioned!) has messed up some of the timings of the project as MAUI was supposed to be part of .Net5 release and is now pushed to the 5-&gt;6 wave which means somewhere in the middle of the two, but I feel this will give the various teams more time to do it properly rather than it being rushed to meet a marketing deadline and that is a great decision.</p>
+<p>I hope you got something from my thoughts on the new Hotness and I will continue to blog and speak on the subject as more info comes out from the teams, but for now&hellip;</p>
+<p>Happy Coding!</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/xamarinformsexpandercontrol/" data-toggle="tooltip" data-placement="top" title="Xamarin.Forms NEW Expander Control">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
