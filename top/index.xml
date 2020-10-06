@@ -6,14 +6,25 @@
     <description>Recent content in Tops on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Mon, 28 Sep 2020 18:46:47 +0100</lastBuildDate><atom:link href="https://cliffagius.github.io/top/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 06 Oct 2020 08:23:34 +0100</lastBuildDate><atom:link href="https://cliffagius.github.io/top/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Flying</title>
+      <link>https://cliffagius.github.io/top/flying/</link>
+      <pubDate>Tue, 06 Oct 2020 08:23:34 +0100</pubDate>
+      
+      <guid>https://cliffagius.github.io/top/flying/</guid>
+      <description>Flying and Aviation I will from time to time write a post about aviation and flying the Boeing 787 around the world. I have been asked many times to do this but never really known what to write about, so if you have an idea of a subject you want to hear about the world of Aviation/Flying drop me an email and let me know.
+For now here are some nice pictures for you to enjoy&amp;hellip;</description>
+    </item>
+    
     <item>
       <title>About</title>
       <link>https://cliffagius.github.io/top/about/</link>
       <pubDate>Mon, 28 Sep 2020 18:46:47 +0100</pubDate>
       
       <guid>https://cliffagius.github.io/top/about/</guid>
-      <description>About Me! My Name is Cliff&amp;hellip;</description>
+      <description>About Me! My Name is Clifford Agius but everyone just calls me Cliff unless I&amp;rsquo;m in trouble that is.
+I am an Airline Pilot for a Major UK carrier and I have the fantastic priviledge to fly the Boeing 787 Dreamliner around the world from our home at London Heathrow. This is an amazing aircraft that burns next to no fuel and carries either 217 (-8/-9) or 256 (-10) passengers in comfort at Mach 0.</description>
     </item>
     
     <item>
@@ -22,7 +33,9 @@
       <pubDate>Mon, 28 Sep 2020 18:46:47 +0100</pubDate>
       
       <guid>https://cliffagius.github.io/top/speaking/</guid>
-      <description>Speaking I do speaking with real words&amp;hellip;</description>
+      <description>Speaking I am always happy to give talks on Xamarin/IoT especially if it&amp;rsquo;s around projects I am working on, as well as Team Skills from the Aviation world.
+You can find my Talks on my Sessionize Speaker Profile
+If you interested in having me along at your Meet-Up/Conference/Podcast to talk then please just email me CliffordAgius@CA-Software.Co.uk</description>
     </item>
     
   </channel>
