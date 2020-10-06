@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/Banner.png">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/Banner.png" />
+    
+
+    
+    <meta name="title" content="Working with Images in Xamarin.Forms " />
+    <meta property="og:title" content="Working with Images in Xamarin.Forms " />
+    <meta property="twitter:title" content="Working with Images in Xamarin.Forms " />
+    
+
+    
+    <meta name="description" content="Developing a Xamarin app and wondering how you add an image, where they go and what sizes are needed">
+    <meta property="og:description" content="Developing a Xamarin app and wondering how you add an image, where they go and what sizes are needed" />
+    <meta property="twitter:description" content="Developing a Xamarin app and wondering how you add an image, where they go and what sizes are needed" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Working with Images in Xamarin.Forms -</title>
+
+    <link rel="canonical" href="/post/workingwithimagesinxamarin/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.css">
+
+    
+    
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/iot">iot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+                        <li><a href="/top/Flying/">Flying</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/DroidResourcesFolder.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/xamarin" title="Xamarin">
+                            Xamarin
+                        </a>
+                        
+                    </div>
+                    <h1>Working with Images in Xamarin.Forms </h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                Clifford Agius | CA-Software Ltd
+                         
+                        on 
+                        Tuesday, March 3, 2020
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#working-with-images-in-xamarin">Working with Images In Xamarin</a>
+      <ul>
+        <li><a href="#where-do-the-images-go">Where do the Images go?</a></li>
+        <li><a href="#which-to-pick">Which to pick?</a></li>
+        <li><a href="#now-the-detail">Now the Detail</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="working-with-images-in-xamarin">Working with Images In Xamarin</h1>
+<p>Your just starting out developing a Xamarin app and wondering how you add an image, where they go and what sizes are needed. This is something I wondered when I first started and it took me a while to resolve it.  The docs <a href="https://docs.microsoft.com/xamarin/xamarin-forms/user-interface/images?WT.mc_id=DOP-MVP-5003764">Images in Xamarin.Forms</a> are very good (They all are really!) but still I was confused on the best approach.  Well I was asked by someone I have been helping a little get into Xamarin Development so rather than just share with one person I thought a blog would be better.</p>
+<p>This blog post then is my attempt at a deep(er)-dive into the art of getting those image resources into the correct sizes and into the correct folders in your Xamarin solution.  I have written this from the perspective of using XAML for the UI layer.</p>
+<h2 id="where-do-the-images-go">Where do the Images go?</h2>
+<p>You have two options here the first is to place them in the respective projects so the Resources folder on both Android and IOS but the Assets folder on UWP but that means 3 copies of the image minimum.  The other option is to add a folder say called Images to the NET Standard project (The Shared one!) and throw the images in there so just the one copy.</p>
+<p>Now both options have advantages and disadvantages so lets take a look at them:</p>
+<p>** Yes before someone tracks me down on the interwebs there is a 3rd option of grabbing the Image via HTTP direct from a web resource but thats not covered in this Blog, but can be seen in the Docs.</p>
+<h3 id="net-standard-images-folder">NET Standard Images Folder</h3>
+<p>I am guessing your already thinking I&rsquo;m going with the Images Folder in the NET Standard project so you only have to create the one image and have them all in the same place and it easy to manage.  Well this is sort of true but to then access them you have to use a bit of a hack and create an ImageResourceExtension that will allow Xamarin to find the file in the correct folder so that it can be rendered.  (If your doing Code UI these is easier using EmbeddedResources.)</p>
+<p>Also as there is only one copy of the image it is obviously just the one size and that same image is used on all devices so scale and quality are a concern as you then possibly need to have an image of the correct size and quality for the largest screen and scale down on smaller screens.  This may sound ok but if that image is a background image for example then on the new iPhone or Pixel devices it may need to be one size but then for iPad or even Windows desktop a completely different size otherwise the aspect ratio of the image will be off and look a bit odd.</p>
+<p>This will mean this large image is taking a lot of memory and app size bloat on smaller/older devices which your end user won&rsquo;t thank you for.</p>
+<p>So this method is easier at design time but not ideal, however I will explain the process later for completeness.</p>
+<h3 id="project-resource-folders">Project Resource Folders</h3>
+<p>Like I said above if you have 3 projects Android/IOS/UWP then each project will need at least one copy of the image, but it doesn&rsquo;t end there as each platform caters for many screen sizes so it&rsquo;s best practice to at least cover the main sizes.  What does this require? well you will need many versions of the same image in all sorts of DPI/Size&rsquo;s with each one placed in the correct folder which makes for a lot of image editing and adding to the projects.</p>
+<h2 id="which-to-pick">Which to pick?</h2>
+<p>The option is up to you on the project you are working on, if I&rsquo;m throwing together a quick test app or one with a just a few pages then I tend to go with the images in the NET Standard project.  If I am building a bigger app or want to put it into the App Store then I opt for the Resource folders and take the time to get the image assets the correct size and in the correct places, yes it&rsquo;s a pain but worth it in the end&hellip;</p>
+<h2 id="now-the-detail">Now the Detail</h2>
+<h3 id="resource-folder-option">Resource Folder Option</h3>
+<p>First lets start by looking at these Resource folders if you File-&gt;New-&gt;Xamarin.Forms you will see the resources folder in the Android project will look like this:</p>
+<p>
+  <img src="/images/DroidResourcesFolder.jpg" alt="DroidResourcesFolder">
+
+</p>
+<p>But on IOS it&rsquo;s</p>
+<p>
+  <img src="/images/IOSResourcesFolder.jpg" alt="IOSResourcesFolder">
+
+</p>
+<p>And to add to the confusion the UWP Assets folder</p>
+<p>
+  <img src="/images/UWPResourcesFolder.jpg" alt="UWPResourcesFolder">
+
+</p>
+<p>So what is going on here? All these folders are the locations for your image and they all need copies of various size and DPI and in the case of IOS named correctly as well&hellip;</p>
+<h3 id="lets-go-back-to-the-basics">Lets go back to the basics</h3>
+<p>Like I said we need to get the correct size images and place them into the folders but what sizes do we need.  Lets start with Android as you can see above in the folder layout there are many different drawable folders each with a size listed after them, so drawable-ldpi is LowDPI and hdpi is HighDPI etc.</p>
+<p>On IOS it&rsquo;s a little different looking at the image above again and taking the tab_about.png it&rsquo;s listed 3 times the standard, Retina with the @2x added and RetinaHD with the @3x.  Having mentioned this and showing that this is a FileNew Project from Xamarin as of IOS9 this is no longer the preferred method of using images in an IOS project, instead you should create the images in the required sizes and add them to the project as an AssetCatalog you can see more detail about this here: <a href="https://docs.microsoft.com/xamarin/ios/app-fundamentals/images-icons/displaying-an-image?WT.mc_id=DOP-MVP-5003764">IOS9 Asset Catalog</a></p>
+<p>Finally for UWP it&rsquo;s a bit of a mess in the folder but there is a tool to add images here and I will cover that in another Blog Post as I have an idea I want to put to the community and XamarinHQ.</p>
+<p>So we have all these image sizes but a picture literally speaks a 1000 words so here is a table that will help:</p>
+<p>
+  <img src="/images/DPI_Chart.jpg" alt="DPI_Chart">
+
+</p>
+<p>Now your probably thinking well we don&rsquo;t work in pixels in Xamarin it&rsquo;s all abstracted away and we use units instead.  But if we work in units we need to be able to do a rough conversion so that we can size the image correctly, no point having a massive image if it&rsquo;s only a small icon sized image on device.</p>
+<p>So lets imagine you need a picture of a Monkey on the left of your CollectionView and it&rsquo;s going to be 1/8th the screen Width. In Xamarin we kind of assume that the basic screen size is 320 points wide and 470 points high (Slightly higher at 480 on IOS).</p>
+<p>This means that 320/8 = 40.  This will require a 40x40 image for the Android mpdi and IOS Standard, and using the image size multipliers from the table above you can see that for an xhdpi/Retina it&rsquo;s Base x 2 which means 80x80 so you see how this works.</p>
+<p>This will give you the sizes you need to make and which folders they need to go into.  There are online tools that will take an image and do the conversions for you some are even free but they mostly cover the App Icons and not images for obvious reasons they don&rsquo;t know you want an image to be 1/8th the screen width for example.</p>
+<p>Now you have all the images in the correct sizes and in the correct folders you can reference the image within your XAML like so:</p>
+<pre><code>&lt;Image Source=&quot;Monkey.jpg&quot; /&gt;
+</code></pre>
+<h3 id="using-shared-images---imageresourceextension">Using Shared Images - ImageResourceExtension</h3>
+<p>This ImageResourceExtension is simply a class in the root of the NET Standard project which I tend to name ImageResourceExtension.cs for ease and so I know what it is, inside this class you will need the following code:</p>
+<pre><code>/// &lt;summary&gt;
+/// DO NOT FORGET THAT YOU NEED TO MAKE THE IMAGE FILES &quot;Embedded Resource Files&quot;
+/// &lt;/summary&gt;
+[ContentProperty(nameof(Source))]
+public class ImageResourceExtension : IMarkupExtension
+{
+    public string Source { get; set; }
+
+    public object ProvideValue(IServiceProvider serviceProvider)
+    {
+        if (Source == null)
+        {
+            return null;
+        }
+
+        // Do your translation lookup here, using whatever method you require
+        var imageSource = ImageSource.FromResource(Source, typeof(ImageResourceExtension).GetTypeInfo().Assembly);
+
+        return imageSource;
+    }
+}
+</code></pre>
+<p>Once you have this class in your project and some images in your Images folder not forgetting to make sure the images are Embeddedresources as their build options (Right click the image and check it&rsquo;s properties!) then to access them from XAML you just need the following:</p>
+<pre><code>&lt;Image
+  Aspect=&quot;AspectFit&quot;
+  Source=&quot;{local:ImageResource MyWizzyProject.Images.Logo.png}&quot;
+  VerticalOptions=&quot;Start&quot; /&gt;
+</code></pre>
+<p>Using the Aspect option you can make the image size fit or fill the bounding of the Image item on the screen so playing around and maybe adding some Margin or Padding it will hopefully fit the area you wish.  However as mentioned above the big disadvantage of this way is that you need to test on many screen sizes to be sure the image displays how you wish and doesn&rsquo;t cover other items on the page.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Well hopefully you can see the two methods of adding images to your Xamarin Application and benefits/drawbacks of each.  One cool tool that can help with adding images is MFractor this is available for both VS4Mac and VS4Windows and takes some of the work out of adding images to each project, I use it so take a look it can save a lot of time but it&rsquo;s not free sadly, but it is very good and gives a bunch of other improvements so well worth the small cost.</p>
+<p><a href="https://www.mfractor.com/products/mfractor-professional">MFractor.com</a></p>
+<p>As always any questions or suggestions if you have spotted something wrong leave a comment or find me on Twitter.</p>
+<p>Happy Coding.</p>
+<p>Cliff.</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/findingand3dprintingahand/" data-toggle="tooltip" data-placement="top" title="Finding and 3D Printing a Hand">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/ideasforvisualstudiotools/" data-toggle="tooltip" data-placement="top" title="Ideas For a Visual Studio Tool">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

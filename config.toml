@@ -95,6 +95,9 @@ home = ["HTML", "RSS"]
   [[params.addtional_menus]]
   title =  "ABOUT"
   href =  "/top/about/"
+  [[params.addtional_menus]]
+  title =  "Flying"
+  href =  "/top/flying/"
 
 [outputFormats.Algolia]
 baseName = "algolia"

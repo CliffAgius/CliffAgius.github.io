@@ -110,6 +110,8 @@
                     
                         <li><a href="/top/about/">ABOUT</a></li>
                     
+                        <li><a href="/top/Flying/">Flying</a></li>
+                    
 
                     
                 </ul>
@@ -153,7 +155,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/static/images/LiveReloadNuget.png')
+        background-image: url('/images/LiveReloadNuget.png')
     }
 </style>
 <header class="intro-header">
@@ -210,9 +212,9 @@
       <ul>
         <li><a href="#warnings">Warnings</a></li>
         <li><a href="#final-thoughts">Final Thoughts</a></li>
+        <li><a href="#happy-coding">Happy Coding&hellip;</a></li>
       </ul>
     </li>
-    <li><a href="#happy-coding">Happy Coding&hellip;</a></li>
   </ul>
 </nav>
                 
@@ -232,7 +234,7 @@
 <h3 id="live-player">Live Player</h3>
 <p>So, what is LivePLayer, this was announced at Build17 and is designed as a getting started sandbox for developers to get their ideas visualized on a device quickly (Copied straight from the Docs).</p>
 <p>
-  <img src="/static/images/xamarin-live.png" alt="Live Player Pairing">
+  <img src="/images/xamarin-live.png" alt="Live Player Pairing">
 
 </p>
 <p>The important part here is the &lsquo;On-Device&rsquo;, LivePlayer works by you installing the LivePlayer app from the respective App store onto your device and then pairing it with Visual Studio (both VS17 and VS4Mac work!). Then you can run the app in debug with the Device paired and as you make changes these are visualised immediately on the device which is super cool.  The app on the device receives the XAML changes and interprets them into the view you see on screen, so this also means that for layout and UI designs you can even see the IOS screen without needing the glowing apple machine in the corner of your office.
@@ -252,7 +254,7 @@ This last part for me when I am travelling the world has been brilliant as I can
 <p>So Live Reload requires you to install from the Visual Studio Marketplace as an extension now, but I&rsquo;m sure it will be part of VS soon. Currently it&rsquo;s only available for VS17 and not VS4Mac but the team say this is being worked on for a later release.
 Once you have the tooling installed for the project you need to install a NuGet package but follow the instructions on the Docs as I couldn&rsquo;t find it at first as the package is not on Nuget.org so you have to change your Package source to All to find it and don&rsquo;t forget to tick the Preview box as well (It&rsquo;s hidden away in there&hellip;)</p>
 <p>
-  <img src="/static/images/LiveReloadNuget.png" alt="Installing the NuGet">
+  <img src="/images/LiveReloadNuget.png" alt="Installing the NuGet">
 
 </p>
 <p>Once you have it installed for all the projects you need to add LiveReload.Init(); to the constructor in the Application class</p>
@@ -297,13 +299,18 @@ Once you have the tooling installed for the project you need to install a NuGet 
 <p>Awesome work by the Visual Studio and Xamarin teams making Xmarin.Forms development not just easier but faster as well especially for the UI elements, this means I can get my UI layers in front of my Client earlier and reduce the need for major changes later in the project.</p>
 <p>As always (Yes, I know it&rsquo;s only my 2nd blog post!) if you have any comments then leave them below or contact me via Twitter/email etc or of course come find me on the beach I will be the one with the cake and Caipirinha and a big Live Reloaded smile on my face&hellip; ;)</p>
 <p>Right must go my time is up need to go do the other day job and fly the plane if your reading this I landed without incident as well&hellip;</p>
-<h1 id="happy-coding">Happy Coding&hellip;</h1>
+<h2 id="happy-coding">Happy Coding&hellip;</h2>
 
 
                 
 
                 <hr>
                 <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/my-first-post/" data-toggle="tooltip" data-placement="top" title="Live Player V Live Reload">&larr;
+                            Previous Post</a>
+                    </li>
                     
                     
                     <li class="next">

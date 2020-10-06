@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/Banner.png">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/Banner.png" />
+    
+
+    
+    <meta name="title" content="Ideas For a Visual Studio Tool" />
+    <meta property="og:title" content="Ideas For a Visual Studio Tool" />
+    <meta property="twitter:title" content="Ideas For a Visual Studio Tool" />
+    
+
+    
+    <meta name="description" content="An Idea of mine for making Images easier to work with in Visual Studio when building a new Xamarin App that targets Andriod/iOS and UWP...">
+    <meta property="og:description" content="An Idea of mine for making Images easier to work with in Visual Studio when building a new Xamarin App that targets Andriod/iOS and UWP..." />
+    <meta property="twitter:description" content="An Idea of mine for making Images easier to work with in Visual Studio when building a new Xamarin App that targets Andriod/iOS and UWP..." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Ideas For a Visual Studio Tool-</title>
+
+    <link rel="canonical" href="/post/ideasforvisualstudiotools/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.css">
+
+    
+    
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/iot">iot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+                        <li><a href="/top/Flying/">Flying</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/images/MobileSim.jpg')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/xamarin" title="Xamarin">
+                            Xamarin
+                        </a>
+                        
+                    </div>
+                    <h1>Ideas For a Visual Studio Tool</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                Clifford Agius | CA-Software Ltd
+                         
+                        on 
+                        Tuesday, March 3, 2020
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#idea-for-a-visualstudio-tool-for-xamarin">Idea for a VisualStudio Tool for Xamarin</a>
+      <ul>
+        <li><a href="#visualstudio-to-the-rescue">VisualStudio to the rescue</a></li>
+        <li><a href="#now-how-can-this-help-in-xamarin">Now how can this help in Xamarin?</a></li>
+        <li><a href="#do-you-like">Do you like?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="idea-for-a-visualstudio-tool-for-xamarin">Idea for a VisualStudio Tool for Xamarin</h1>
+<p>In my last blog I wrote about all the different image sizes required for a Xamarin project and how to calculate them and size them and where to put them, it&rsquo;s all very confusing when you first start out in mobile development so I hope that post helped&hellip;</p>
+<p>Recently (2019!) I was working on a standalone UWP project for a new instructor control station in the Mobile Flight Sim I helped to build, this sim is used by the airline I work for at School STEM events, Recruitment and fun corporate events. It travels to events all over the UK and EU (Have to write that now 😥) and this new Instructor station allows the pilots at the event to control the sim.</p>
+<p>
+  <img src="/images/MobileSim.jpg" alt="Mobile Sim">
+
+</p>
+<p>While working on this project I needed to add some image resources for the Application Icons and Splash screen etc and writing the last post this is where my idea come from.</p>
+<p>In a Xamarin project we need to resize an image many times and place them into the correct folders then include them in the project before repeating the process for the next image&hellip; this is all very tedious and time consuming BUT&hellip; What if there was a tool that could do this for you&hellip;</p>
+<h2 id="visualstudio-to-the-rescue">VisualStudio to the rescue</h2>
+<p>Well I say to the rescue it will need the Microsoft teams to do some work but I am hoping that this blog post will explain my idea and if enough of you reading this can pester them they may work on it.</p>
+<p>So if you go File New -&gt; UWP project and when it&rsquo;s finished creating the project you find and open the Package.appxmanifest which should be the last item in the Solution Explorer.</p>
+<p>
+  <img src="/images/PackageManifestFile.jpg" alt="Package.appxmanifest">
+
+</p>
+<p>When you open this you will see a Visual Assets Tab, click this.</p>
+<p>
+  <img src="/images/VisualAssetsTab.jpg" alt="Visual Assets Tab">
+
+</p>
+<p>
+  <img src="/images/AssetGenerator.jpg" alt="Asset Generator">
+
+</p>
+<p>This is the magic tool you use in a UWP project to automatically create your project assets, the likes of your Tiles, App Icons etc.  Essentially what this tool does is you drop an image into the Source window or select using the Source ellipsis from your file system.  Click the Generate button and it works away for a short time and crops/sizes and saves the image in the correct sizes in the correct place in the project.</p>
+<h2 id="now-how-can-this-help-in-xamarin">Now how can this help in Xamarin?</h2>
+<p>Well we have two ways of using an image, sticking an image into the shared project and using the ImageResourceExtension class to find and use the file or we place multiple copies of the image into the various Android and IOS folders all correctly sized and named.</p>
+<p>What if the clever people at Microsoft and Xamarin take this already existing tool inside Visual Studio and repurposed it&hellip;  What if we place our images in the Shared Project and then use this tool to automatically resize them and place them into the xhdpi folder and create the IOS AssetCatalog.</p>
+<p>The tool already generates the files for UWP so that work is done all is needed is a few extra lines in the Tool to show the output for the Android and IOS version of the image.</p>
+<p>They could also add a size picker near the top so that you can select the sizes you want the Base version to be remembering the little DPI table from my last post</p>
+<p>
+  <img src="/images/DPI_Chart.jpg" alt="DPI_Chart">
+
+</p>
+<p>With this info the tool can automatically create the others based off this and place them correctly in the project, even use the current Image Size tool which is reformatted to show a Mobile Phone screen and the size the image would look when converted so it&rsquo;s easy to pick the one you want a bit like this (Button Mobile Phone Outline in place of the Box!)</p>
+<p>
+  <img src="/images/GeneratedImages.jpg" alt="Generated Images">
+
+</p>
+<p>Once you have reviewed and tinkered with say being able to drag the master image around to show where the crop/cuts would be made for the size you have picked click another button to place the images into the respective folders in the project.</p>
+<h2 id="do-you-like">Do you like?</h2>
+<p>I think this idea will work and save a lot of time editing photo&rsquo;s as well as making the onboarding of new dev&rsquo;s to the Xamarin platform easier.  VisualStudio is an amazing IDE and has the power to edit the images even if just a basic first pass while you await the designers to send you the final edits.</p>
+<p>MFractor is also an amazing tool that brings a lot more than just image editing to the VS4Mac and VS19 but it come at a price which in my mind isn&rsquo;t expensive if I&rsquo;m honest but to a new dev starting out trying to work out if Xamarin is for them any cost is too much and barriers like a simple image edit too high.</p>
+<p>If you think this idea would be good then copy the link of this blog and pester the Xamarin and Microsoft teams and lets see if they will edit the tool for our needs, yes I could write an Add-On but this already exists now for UWP and just needs a tweak and it will be in the box for everyone. (Sorry MFractor)</p>
+<p>Well that&rsquo;s my idea.</p>
+<p>Happy coding</p>
+<p>Cliff.</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/workingwithimagesinxamarin/" data-toggle="tooltip" data-placement="top" title="Working with Images in Xamarin.Forms ">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/xamarinformsexpandercontrol/" data-toggle="tooltip" data-placement="top" title="Xamarin.Forms NEW Expander Control">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>

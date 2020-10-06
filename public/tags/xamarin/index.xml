@@ -6,7 +6,36 @@
     <description>Recent content in Xamarin on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Sat, 21 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/tags/xamarin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 23 Apr 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/tags/xamarin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Xamarin.Forms NEW Expander Control</title>
+      <link>https://cliffagius.github.io/post/xamarinformsexpandercontrol/</link>
+      <pubDate>Thu, 23 Apr 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/xamarinformsexpandercontrol/</guid>
+      <description>Xamarin.Forms NEW ExpanderControl Coming along in the new Xamarin.Forms 4.6 release which at the time of writing is at 4.6pre4 (So it&amp;rsquo;s due very soon!) is a new control called the ExpanderControl, now those of you that have played with Web will know this as the Accordian Control in that the user clicks/taps the element in the list and it expands to show more detail of that item.
+This control has been added to Xamarin.</description>
+    </item>
+    
+    <item>
+      <title>Ideas For a Visual Studio Tool</title>
+      <link>https://cliffagius.github.io/post/ideasforvisualstudiotools/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/ideasforvisualstudiotools/</guid>
+      <description>Idea for a VisualStudio Tool for Xamarin In my last blog I wrote about all the different image sizes required for a Xamarin project and how to calculate them and size them and where to put them, it&amp;rsquo;s all very confusing when you first start out in mobile development so I hope that post helped&amp;hellip;
+Recently (2019!) I was working on a standalone UWP project for a new instructor control station in the Mobile Flight Sim I helped to build, this sim is used by the airline I work for at School STEM events, Recruitment and fun corporate events.</description>
+    </item>
+    
+    <item>
+      <title>Working with Images in Xamarin.Forms </title>
+      <link>https://cliffagius.github.io/post/workingwithimagesinxamarin/</link>
+      <pubDate>Tue, 03 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/workingwithimagesinxamarin/</guid>
+      <description>Working with Images In Xamarin Your just starting out developing a Xamarin app and wondering how you add an image, where they go and what sizes are needed. This is something I wondered when I first started and it took me a while to resolve it. The docs Images in Xamarin.Forms are very good (They all are really!) but still I was confused on the best approach. Well I was asked by someone I have been helping a little get into Xamarin Development so rather than just share with one person I thought a blog would be better.</description>
+    </item>
+    
     <item>
       <title>10 steps to submitting your first Xamarin.Forms PR.</title>
       <link>https://cliffagius.github.io/post/firstxamarinpr/</link>
@@ -34,6 +63,18 @@ So the first job is to get the custom font pack from the design team or the web 
       
       <guid>https://cliffagius.github.io/post/liveplayervlivereload/</guid>
       <description>Live Player v Live Reload. So, your developing a Xamarin app and getting tired of the make a change, save the change, build the change, deploy the change notice you messed it up so starting the loop over again. Yes that loop can take a few minutes and all you might be editing is the value in the CSS file to change and test the colour of the background (Yes Xamarin.</description>
+    </item>
+    
+    <item>
+      <title>Live Player V Live Reload</title>
+      <link>https://cliffagius.github.io/post/my-first-post/</link>
+      <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/my-first-post/</guid>
+      <description>categories: This is the are to place the post under that is part of the menu at the top so Limited to IOT/XAMARIN/Aviation/Speaking
+Tags: These are the tags that get shown on the side menu of the front page of the blog so go wild&amp;hellip;
+My First Page This is the first blog page tp check it&amp;rsquo;s all working&amp;hellip;
+Images Images go into the /Static/Images folder and get referenced like so?</description>
     </item>
     
   </channel>
