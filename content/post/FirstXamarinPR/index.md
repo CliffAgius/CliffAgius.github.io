@@ -5,7 +5,7 @@ title:       "10 steps to submitting your first Xamarin.Forms PR."
 subtitle:    ""
 description: "How to make your very first PR tp the Xamarin.Forms or any other Open Source Project on GitHub."
 date:        2019-09-21
-image:       "ControlsGallery.png"
+image:       "post/firstxamarinpr/ControlsGallery.png"
 tags:        ["Xamarin"]
 categories:  ["Xamarin" ]
 ---

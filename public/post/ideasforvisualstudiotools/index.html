@@ -155,7 +155,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/images/MobileSim.jpg')
+        background-image: url('/post/ideasforvisualstudiotools/MobileSim.jpg')
     }
 </style>
 <header class="intro-header">
@@ -222,7 +222,7 @@
 <p>In my last blog I wrote about all the different image sizes required for a Xamarin project and how to calculate them and size them and where to put them, it&rsquo;s all very confusing when you first start out in mobile development so I hope that post helped&hellip;</p>
 <p>Recently (2019!) I was working on a standalone UWP project for a new instructor control station in the Mobile Flight Sim I helped to build, this sim is used by the airline I work for at School STEM events, Recruitment and fun corporate events. It travels to events all over the UK and EU (Have to write that now 😥) and this new Instructor station allows the pilots at the event to control the sim.</p>
 <p>
-  <img src="/images/MobileSim.jpg" alt="Mobile Sim">
+  <img src="MobileSim.jpg" alt="Mobile Sim">
 
 </p>
 <p>While working on this project I needed to add some image resources for the Application Icons and Splash screen etc and writing the last post this is where my idea come from.</p>
@@ -231,16 +231,16 @@
 <p>Well I say to the rescue it will need the Microsoft teams to do some work but I am hoping that this blog post will explain my idea and if enough of you reading this can pester them they may work on it.</p>
 <p>So if you go File New -&gt; UWP project and when it&rsquo;s finished creating the project you find and open the Package.appxmanifest which should be the last item in the Solution Explorer.</p>
 <p>
-  <img src="/images/PackageManifestFile.jpg" alt="Package.appxmanifest">
+  <img src="PackageManifestFile.jpg" alt="Package.appxmanifest">
 
 </p>
 <p>When you open this you will see a Visual Assets Tab, click this.</p>
 <p>
-  <img src="/images/VisualAssetsTab.jpg" alt="Visual Assets Tab">
+  <img src="VisualAssetsTab.jpg" alt="Visual Assets Tab">
 
 </p>
 <p>
-  <img src="/images/AssetGenerator.jpg" alt="Asset Generator">
+  <img src="AssetGenerator.jpg" alt="Asset Generator">
 
 </p>
 <p>This is the magic tool you use in a UWP project to automatically create your project assets, the likes of your Tiles, App Icons etc.  Essentially what this tool does is you drop an image into the Source window or select using the Source ellipsis from your file system.  Click the Generate button and it works away for a short time and crops/sizes and saves the image in the correct sizes in the correct place in the project.</p>
@@ -250,12 +250,12 @@
 <p>The tool already generates the files for UWP so that work is done all is needed is a few extra lines in the Tool to show the output for the Android and IOS version of the image.</p>
 <p>They could also add a size picker near the top so that you can select the sizes you want the Base version to be remembering the little DPI table from my last post</p>
 <p>
-  <img src="/images/DPI_Chart.jpg" alt="DPI_Chart">
+  <img src="DPI_Chart.jpg" alt="DPI_Chart">
 
 </p>
 <p>With this info the tool can automatically create the others based off this and place them correctly in the project, even use the current Image Size tool which is reformatted to show a Mobile Phone screen and the size the image would look when converted so it&rsquo;s easy to pick the one you want a bit like this (Button Mobile Phone Outline in place of the Box!)</p>
 <p>
-  <img src="/images/GeneratedImages.jpg" alt="Generated Images">
+  <img src="GeneratedImages.jpg" alt="Generated Images">
 
 </p>
 <p>Once you have reviewed and tinkered with say being able to drag the master image around to show where the crop/cuts would be made for the size you have picked click another button to place the images into the respective folders in the project.</p>

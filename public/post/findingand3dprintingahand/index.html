@@ -155,7 +155,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/images/BrunelHandParts.jpg')
+        background-image: url('/post/findingand3dprintingahand/BrunelHandParts.jpg')
     }
 </style>
 <header class="intro-header">
@@ -210,7 +210,7 @@
   <ul>
     <li><a href="#finding-and-3d-printing-a-hand">Finding and 3D Printing a Hand</a>
       <ul>
-        <li><a href="#tldr">TLDR</a></li>
+        <li><a href="#tldr">TLDR;</a></li>
         <li><a href="#next-electronics-for-control">Next: Electronics for Control</a></li>
       </ul>
     </li>
@@ -218,7 +218,7 @@
 </nav>
                 
                 <h1 id="finding-and-3d-printing-a-hand">Finding and 3D Printing a Hand</h1>
-<h2 id="tldr">TLDR</h2>
+<h2 id="tldr">TLDR;</h2>
 <p>This is a long post as it&rsquo;s the back story to the whole project and how it came about to getting a design for the hand, it covers the 3D design and printing as well as the problems along the way.  Don&rsquo;t worry if your here hoping to see code and electronics or even the Xamarin App thats coming soon, I just need to explain where the Handy design came from first.  Plus I have noticed that giving talks around the world most people find the 3D printing side very interesting.</p>
 <h3 id="last-time-out">Last Time Out</h3>
 <p>So last time out it was about the big picture behind this project and that I really want to be able to not only provide Kayden with a working arm but along the way come up with a workable design and processes that can be used by others.  This means that the design needs to be fairly simple and cheap to build but as always we still want the best we can get.</p>
@@ -231,14 +231,14 @@
 <h3 id="fire-up-the-3d-printer">Fire up the 3D Printer</h3>
 <p>Now back then my printer was an original RepRap Mendle which is the brain child of Professor Adrian Bower, the RepRap printers are designed such that they can print majority of their own parts.  This means that you build a printer using parts printed on another printer and the first thing you set about printing is spares for yourself and extra to sell to the next person along the chain.  The design is very impressive and means the printers are very cheap but the simple early design made affected the print quality, think Dot Matrix era and your not far off.</p>
 <p>
-  <img src="/images/FIrstPrototype.jpg" alt="Green Hand Prototype">
+  <img src="FIrstPrototype.jpg" alt="Green Hand Prototype">
 
 </p>
 <p>We got a hand printed and assembled and with some post printing finishing using sand paper and acetone it wasn&rsquo;t that bad but that work too quite a while and wasn&rsquo;t ideal.  But we had a prototype and using some heavy duty fishing wire we connected it to Kaydens arm and got him to try it out, it was clear within a few minutes he hated it.  The problem was that the hand did the same as the hook but with less control and dexterity so it was back to the drawing board.</p>
 <h3 id="open-hand-project">Open Hand Project</h3>
 <p>More searching I came across a design by Joel Gibbard from the Open Hand Project (<a href="http://www.openhandproject.org/)">http://www.openhandproject.org/)</a> this was a motorized unit with some basic control and the start of something.  Following the design it turned out it was OpenSource as well (Hence Open I guess!!) and the community was active, so I dived in and started to play with things.  Now that I was trying to print smaller and more complex parts I was reaching the limit of what my now wobbly old printer could manage&hellip; Yes I could do the same post print sanding etc but as mentioned before I want this project to be repeatable with very little effort so I needed a new idea.</p>
 <p>
-  <img src="/images/RoughtPrint.jpg" alt="Rought Print">
+  <img src="RoughtPrint.jpg" alt="Rought Print">
 
 </p>
 <h3 id="prusa-printer">Prusa Printer</h3>
@@ -247,23 +247,23 @@
 <p>Side note if you have never used a 3D Printer before or your considering buy a replacement like I have then I can not recommend Prusa printers highly enough, not only is the price reasonable but they are such capable printers and work perfect out of the box.  Trust me you won&rsquo;t regret it&hellip;</p>
 </blockquote>
 <p>
-  <img src="/images/PrusaPrinterBuild.jpg" alt="Prusa Printer Build">
+  <img src="PrusaPrinterBuild.jpg" alt="Prusa Printer Build">
 
 </p>
 <p>While I wait a few months for my printer to arrive from Poland (It was the new design I was waiting for&hellip;) I was watching the project and noticed that it had moved on to become OpenBionics (<a href="http://www.OpenBionics.co.uk)">http://www.OpenBionics.co.uk)</a> and the designs had moved along to produce initially the Ada Hand and then the Brunel.  The Brunel hand looked perfect it was controlled with 4 motors had some Arduino controller inside and the codebase like the 3D design was all open source on GitHub to play with.</p>
 <h3 id="building-brunel">Building Brunel</h3>
 <p>Printer now build I set about printing the first of many Brunel Hands and obtaining all the parts listed in the BOM (Bill Of Materials)</p>
 <p>
-  <img src="/images/BrunelHandParts.jpg" alt="Printed Parts">
+  <img src="BrunelHandParts.jpg" alt="Printed Parts">
 
 </p>
 <p>So all the mechanical parts were printed and as you can see in the image there are two colours printed, the White plastic is hard like Lego and is printed from a material called PLA this is produced from vegetable extract.  The Red parts are printed in a flexible material as they act as the Ligament to hold the hand together, being flexible these are a little harder to print but the Prusa printer nailed it first time something that would have taken many attempts on my old printer.</p>
 <p>
-  <img src="/images/BrunelAssembled.jpg" alt="Assembled Hand">
+  <img src="BrunelAssembled.jpg" alt="Assembled Hand">
 
 
 
-  <img src="/images/BrunelAssembled2.jpg" alt="Assembled Hand">
+  <img src="BrunelAssembled2.jpg" alt="Assembled Hand">
 
 </p>
 <h3 id="finished-mechanical-build">Finished Mechanical Build</h3>
@@ -273,14 +273,14 @@
 <p>Discounting the need to upgrade the printer which was £800 the costs of material so far for the Plastic parts is impressivly low, 3D printing material is purchased in spools typically 1Kg in weight and the PLA spool is more than enough to print the parts for 3 Hands.  The Moulds need for the Utherane is printed in PETG which is a stronger material and ideal for larger prints and as mentioned the felxible parts from FlexFill 98A.  Breaking the costs out for the parts here you can see that other than a bit of electricity for the long print times the costs are impressive and the weight of the parts very light for a child to hold.</p>
 <p>The Moulds shown here once printed can be re-used many times so only need printing the once if they are looked after, again reducing costs.</p>
 <p>
-  <img src="/images/PrintCosts.jpg" alt="Printing Costs">
+  <img src="PrintCosts.jpg" alt="Printing Costs">
 
 </p>
 <h2 id="next-electronics-for-control">Next: Electronics for Control</h2>
 <p>Lets get things moving.</p>
 
 
-    <video src="/images/HandyOK.mp4" controls> </video>
+    <video src="HandyOK.mp4" controls> </video>
 
 
 

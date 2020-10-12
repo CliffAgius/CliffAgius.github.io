@@ -155,7 +155,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/images/LiveReloadNuget.png')
+        background-image: url('/post/liveplayervlivereload/LiveReloadNuget.png')
     }
 </style>
 <header class="intro-header">
@@ -234,7 +234,7 @@
 <h3 id="live-player">Live Player</h3>
 <p>So, what is LivePLayer, this was announced at Build17 and is designed as a getting started sandbox for developers to get their ideas visualized on a device quickly (Copied straight from the Docs).</p>
 <p>
-  <img src="/images/xamarin-live.png" alt="Live Player Pairing">
+  <img src="xamarin-live.png" alt="Live Player Pairing">
 
 </p>
 <p>The important part here is the &lsquo;On-Device&rsquo;, LivePlayer works by you installing the LivePlayer app from the respective App store onto your device and then pairing it with Visual Studio (both VS17 and VS4Mac work!). Then you can run the app in debug with the Device paired and as you make changes these are visualised immediately on the device which is super cool.  The app on the device receives the XAML changes and interprets them into the view you see on screen, so this also means that for layout and UI designs you can even see the IOS screen without needing the glowing apple machine in the corner of your office.
@@ -254,7 +254,7 @@ This last part for me when I am travelling the world has been brilliant as I can
 <p>So Live Reload requires you to install from the Visual Studio Marketplace as an extension now, but I&rsquo;m sure it will be part of VS soon. Currently it&rsquo;s only available for VS17 and not VS4Mac but the team say this is being worked on for a later release.
 Once you have the tooling installed for the project you need to install a NuGet package but follow the instructions on the Docs as I couldn&rsquo;t find it at first as the package is not on Nuget.org so you have to change your Package source to All to find it and don&rsquo;t forget to tick the Preview box as well (It&rsquo;s hidden away in there&hellip;)</p>
 <p>
-  <img src="/images/LiveReloadNuget.png" alt="Installing the NuGet">
+  <img src="LiveReloadNuget.png" alt="Installing the NuGet">
 
 </p>
 <p>Once you have it installed for all the projects you need to add LiveReload.Init(); to the constructor in the Application class</p>
