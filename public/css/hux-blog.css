@@ -321,9 +321,14 @@ pre code {
     background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    background-size: contain;
+    background-size: cover;
     -o-background-size: cover;
     margin-bottom: 0;
+    filter: brightness(50%);
+}
+.main-intro-header{
+    background-size: contain;
+    filter: brightness(100%); 
 }
 @media only screen and (min-width:768px) {
     .intro-header {
