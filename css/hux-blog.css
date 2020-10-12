@@ -321,9 +321,12 @@ pre code {
     background-attachment: scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
-    background-size: contain;
+    background-size: cover;
     -o-background-size: cover;
     margin-bottom: 0;
+}
+.main-intro-header{
+    background-size: contain; 
 }
 @media only screen and (min-width:768px) {
     .intro-header {
@@ -628,7 +631,7 @@ body {
 }
 .tags a, .tags .tag {
     display: inline-block;
-    border: 1px solid rgba(255, 255, 255, .8);
+    border: 1px solid rgba(255, 255, 255,1);
     border-radius: 999em;
     padding: 0 10px;
     color: #fff;

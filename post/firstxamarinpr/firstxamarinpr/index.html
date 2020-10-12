@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/Banner.png">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/Banner.png" />
+    
+
+    
+    <meta name="title" content="10 steps to submitting your first Xamarin.Forms PR." />
+    <meta property="og:title" content="10 steps to submitting your first Xamarin.Forms PR." />
+    <meta property="twitter:title" content="10 steps to submitting your first Xamarin.Forms PR." />
+    
+
+    
+    <meta name="description" content="How to make your very first PR tp the Xamarin.Forms or any other Open Source Project on GitHub.">
+    <meta property="og:description" content="How to make your very first PR tp the Xamarin.Forms or any other Open Source Project on GitHub." />
+    <meta property="twitter:description" content="How to make your very first PR tp the Xamarin.Forms or any other Open Source Project on GitHub." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>10 steps to submitting your first Xamarin.Forms PR.-</title>
+
+    <link rel="canonical" href="/post/firstxamarinpr/firstxamarinpr/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.css">
+
+    
+    
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/iot">iot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+                        <li><a href="/top/flying/">Flying</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/ControlsGallery.png')
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/xamarin" title="Xamarin">
+                            Xamarin
+                        </a>
+                        
+                    </div>
+                    <h1>10 steps to submitting your first Xamarin.Forms PR.</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 
+                        
+                                Clifford Agius | CA-Software Ltd
+                         
+                        on 
+                        Saturday, September 21, 2019
+                        
+                        
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#10-steps-to-submitting-your-first-xamarinforms-pr">10 steps to submitting your first Xamarin.Forms PR.</a>
+      <ul>
+        <li><a href="#step-1-read-the-contributing-guidelines">Step 1: Read the Contributing Guidelines</a></li>
+        <li><a href="#step-2-clone-the-repository">Step 2: Clone the Repository</a></li>
+        <li><a href="#step-3-add-links-to-the-remote">Step 3: Add links to the Remote</a></li>
+        <li><a href="#step-4-the-fun-part">Step 4: The fun part</a></li>
+        <li><a href="#step-5-pick-a-bug-to-fix">Step 5: Pick a Bug to fix</a></li>
+        <li><a href="#step-6-time-to-branch">Step 6: Time to Branch</a></li>
+        <li><a href="#step-7-the-magic-fix">Step 7: The Magic fix</a></li>
+        <li><a href="#step-8-time-to-submit-the-pr">Step 8: Time to submit the PR</a></li>
+        <li><a href="#step-9-your-work-is-done">Step 9: Your work is done</a></li>
+        <li><a href="#step-10-repeat">Step 10: Repeat</a></li>
+        <li><a href="#blog-post-used-in-creating-this">Blog post used in creating this:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="10-steps-to-submitting-your-first-xamarinforms-pr">10 steps to submitting your first Xamarin.Forms PR.</h1>
+<p>As a Freelance Xamarin Dev I spend time now and then looking at the <a href="https://github.com/xamarin/Xamarin.Forms?WT.mc_id=OSS-MVP-5003764">Xamarin Github</a> to see if the issue I have been battling with is my code or some bug in Xamarin.Forms or maybe I am trying to work out why something isn&rsquo;t working how I had hoped.</p>
+<p>Now I am not saying by any stretch that Xamarin is a buggy code base far from it in the past year or two it has become very stable compared to previous years and yes there are bits here and there (Looking at you UWP!!) that need input but find me a code base that is 100% bug free.</p>
+<p>I have also spent time learning the way that Xamarin works by cloning the repo and taking a look around, looking at bugs in the Issues lists and watching people on Twitch fixing things.  But I then stumbled across a bug that I needed fixed for a project and it looked like a simple(ish!) fix so I thought here is my chance to dive in and help out.</p>
+<p>This blog is about the process of going from looking at the Github Repo and finding an issue to having a PR accepted and is aimed as a reminder to future me of the process and to help those that have never submitted a PR to an OpenSource project.</p>
+<h2 id="step-1-read-the-contributing-guidelines">Step 1: Read the Contributing Guidelines</h2>
+<p>Here you will find details on the Code of Conduct and signing the .NET Foundation CLA so head over to <a href="https://github.com/xamarin/Xamarin.Forms/blob/master/.github/CONTRIBUTING.md?WT.mc_id=OSS-MVP-5003764">Contributing</a> page and make sure you happy and you want to to dive in otherwise reading the rest of this blog is pretty pointless. ;)</p>
+<h2 id="step-2-clone-the-repository">Step 2: Clone the Repository</h2>
+<p>First you need to Fork the Xamarin.Forms repository so go to GitHub page and click the Fork button top right.</p>
+<p>
+  <img src="ForkingTheRepo.png" alt="Forking the Repo">
+
+</p>
+<p>Now you need to get a local copy to work on so once the Fork process is completed you should be on YOUR github repositories page and you can tell this as your Github name will be top left with the &ldquo;Forked from xamarin/Xamarin.Forms&rdquo; below.</p>
+<p>
+  <img src="Cloning.png" alt="Cloning the Repo">
+
+</p>
+<p>So click the big green Clone or Download button to get the URL and head to your favorite Git Client.</p>
+<h6 id="i-use-poshgit-at-the-command-line">I Use PoshGit at the Command Line</h6>
+<p>I like <a href="https://github.com/dahlbyk/posh-git?WT.mc_id=OSS-MVP-5003764">PoshGit</a> as it allows me to see what is happening at my command line with the git repo I am working with, but you can use what ever tools you like to get the code on your machine so you can follow along.</p>
+<p>At the command line use the copied URL like this:</p>
+<pre><code>git clone https://github.com/CliffAgius/Xamarin.Forms.git
+</code></pre>
+<p>And it should look like this when it&rsquo;s done.</p>
+<p>
+  <img src="GitClone.png" alt="Git Clone">
+
+</p>
+<h2 id="step-3-add-links-to-the-remote">Step 3: Add links to the Remote</h2>
+<p>Now we have it locally we need to add a link to the remote so that we can push our changes when we have done them.</p>
+<p>So change directory</p>
+<pre><code>cd Xamarin.Forms
+</code></pre>
+<p>If we now go back to GitHub and get the URL of the main Xamarin.Forms repository we can add a remote link so that we can pull any future changes into our remote.  The Xamarin repository changes many times a day it&rsquo;s that active so we always want this ability.</p>
+<p>Now add this Remote to our local git.</p>
+<pre><code>git remote add upstream https://github.com/xamarin/Xamarin.Forms.git
+</code></pre>
+<p>And to confirm it&rsquo;s worked and we have the required remotes in place use:</p>
+<pre><code>git remote -v
+</code></pre>
+<p>Which should give you something like this:</p>
+<p>
+  <img src="remotescheck.png" alt="Remotes Check">
+
+</p>
+<p>This shows 
+- Origin which points to our forked version and we have full read/write of this.
+- upstream points to the main Xamarin.Forms repository and we can only pull or read from this.</p>
+<h2 id="step-4-the-fun-part">Step 4: The fun part</h2>
+<p>Now you have all you need to fire up VisualStudio and poke around the code. But lets explain all those projects first.</p>
+<p>
+  <img src="XFSolutionExplorer.png" alt="Solution Explorer">
+
+</p>
+<ul>
+<li>Controls Gallery - A basic application where you can play with the various controls.  This is also the part where you will add your Issue so that you can show it&rsquo;s been fixed.</li>
+<li>Pages Gallery - Another test application but this time for the Pages.</li>
+<li>Platforms - Where all the platform specific renderers live so when in your code you add a button if it&rsquo;s Droid then it will render (EDIT: Actually on Android you will now get the Fast Renderer for some controls&hellip;)</li>
+</ul>
+<blockquote>
+<p>Xamarin.Forms.Platform.Android/Renderers/ButtonRenderer.cs</p>
+</blockquote>
+<ul>
+<li>UITests - this one explains itself and also very important if you fix a bug start by writing a test for it the Xamarin.Forms team will love you to go Red-&gt;Green-&gt;Refactor.</li>
+<li>Xamarin.Forms - These are the Core Xamarin abstract controls and other non-platform specific items.  For example in here the Button.cs would show the bindable objects etc that can be used in your application.</li>
+<li>The other folders speak for themselves so dig around and have a play.</li>
+</ul>
+<h2 id="step-5-pick-a-bug-to-fix">Step 5: Pick a Bug to fix</h2>
+<p>Head back to the <a href="https://github.com/xamarin/Xamarin.Forms/issues?WT.mc_id=OSS-MVP-5003764">Xamarin.Forms Github Issues page</a> and look for an issue to fix.  There are many labels used in the project but a good place to start is with:</p>
+<p>
+  <img src="HelpWanted.png" alt="HelpWanted">
+
+
+
+  <img src="upforgrabs.png" alt="UpForGrabs">
+
+</p>
+<p>Find the one you want to help with and in the issue there should be some notes on the problem and some steps to re-produce the fault. I suggest that you leave a comment to say that you have picked this issue up so that you don&rsquo;t end up with more than one person fixing the same thing.</p>
+<h2 id="step-6-time-to-branch">Step 6: Time to Branch</h2>
+<p>So that we can push our changes and have them pulled into the main repository it&rsquo;s required that we create a branch and work in this branch.</p>
+<pre><code>git pull upstream master
+git push origin master
+</code></pre>
+<p>This pulls the latest changes from the Xamarin.Forms project and pushes them to your fork, we do this to make sure we have the latest and greatest changes.</p>
+<pre><code>git checkout -b issue5168
+</code></pre>
+<p>Here you use the issue number from the Git Issue you looked at earlier, so in my case above I am looking to work on #Issue 5168 so I create a local branch for that.</p>
+<h2 id="step-7-the-magic-fix">Step 7: The Magic fix</h2>
+<p>Now you have worked out where you want to help and created a branch for the fix and it&rsquo;s time to implement the magic.</p>
+<p>Within the solution find the following:</p>
+<p>
+  <img src="ControlsGallery.png" alt="Controls Gallery">
+
+</p>
+<p>Inside the Xamarin.Forms.Controls.Issues.Shared create a new class named after your issue, so to match your branch and in this sample case Issue5168.  The easiest way to honestly do this is to create a copy of an issue like yours and rename it.  However as a template this should work for you:</p>
+<pre><code>using System;
+Xamarin.Forms.CustomAttributes;
+using Xamarin.Forms.Internals;
+
+#if UITEST
+using Xamarin.Forms.Core.UITests;
+using Xamarin.UITest;
+using NUnit.Framework;
+#endif
+    
+namespace Xamarin.Forms.Controls.Issues
+{
+#if UITEST
+    [Category(UITestCategories.ManualReview)]
+#endif
+Preserve(AllMembers = true)]
+[Issue(IssueTracker.Github, 5168, &quot;Incorrect increments stepper with small increments... - Droid&quot;, PlatformAffected.Android)]
+        public class Issue5168 : TestContentPage // or TestMasterDetailPage, etc ...
+        {
+            protected override void Init()
+            {
+                Label header = new Label
+                {
+                    Text = &quot;Please make use of the stepper below to step up and back to zero to ensure no Exponent value is displayed...&quot;,
+                    FontSize = Device.GetNamedSize(NamedSize.Large, typeof(Label)),
+                    HorizontalOptions = LayoutOptions.Center
+                };
+    
+                Stepper stepper = new Stepper
+                {
+                    Minimum = 0.0,
+                    Maximum = 1.0,
+                    Increment = 0.05
+                };
+    
+                Label valueLabel = new Label
+                {
+                    Text = $&quot;Value - {stepper.Value.ToString()}&quot;
+                };
+    
+                Label stepPosLabel = new Label
+                {
+                    Text = $&quot;Position - {stepper.StepperPosition.ToString()} * {stepper.Increment.ToString()}&quot;
+                };
+    
+                stepper.ValueChanged += (s, e) =&gt;
+                {
+                    valueLabel.Text = e.NewValue.ToString();
+                };
+    
+                Content = new StackLayout
+                {
+                    Padding = new Thickness(20),
+                    Children =
+                    {
+                        header,
+                        stepper,
+                        valueLabel,
+                        stepPosLabel
+                    }
+                };
+            }
+        }
+        }
+</code></pre>
+<p>The important part here is at the top of the class there are class attributes that give the class an Issue to track and also some text on what the issue is.  The purpose of this class is to build a minimal UI in code to reproduce the error.  From this you then build/edit the UITests to prove the error and fix the code to stop the error.</p>
+<p>Once you have this class written select your chosen device and run the Control Gallery target, within this you can select Goto Test Cases and find your reproduction.</p>
+<p>
+  <img src="DroidGalleryLoaded.png" alt="Test case loaded">
+
+
+
+  <img src="FindBugRepo.png" alt="Find your issue">
+
+</p>
+<p>Once you have your text case written such that you can prove the issue it&rsquo;s time to work your magic and fix the issue.  For fixing refer the to the project layout detailed above, not forgetting that you should ideally add UITests so that in the future the tests being run can prove the issues have not re-surfaced.</p>
+<h2 id="step-8-time-to-submit-the-pr">Step 8: Time to submit the PR</h2>
+<p>You have weaved some magic and got the bits to dance to your happy tune thus fixing the problem, you have checked this by running the test cases in the gallery and your UITests are all green ticks.  This means you ROCK and deserve a nice coffee with maybe some biscuits or a sticky bun.  But your work here is not finished yet, the rest of the world want that awesome fix so it&rsquo;s time to push your changes and submit that all important first PR.</p>
+<p>First you need to push the changes to your forked github repo</p>
+<pre><code>git push -u origin issue5168
+</code></pre>
+<p>This will push the changes to your remote fork of the project, using the -u links the local and remote branches so in the future while your tinkering with your work you can just use</p>
+<pre><code>git push origin
+</code></pre>
+<p>But you nailed it on the first pass (Ok maybe the 2nd!) and you have a fix to share with the world.  Go back to your fork on GitHub in the browser and click the new green button &ldquo;Compare &amp; Pull request&rdquo;.</p>
+<p>
+  <img src="Creatingtheforkpr.png" alt="Compare and Pull request">
+
+</p>
+<p>This will create the pull request with the main project and give you the option to add some details on what you have done, please complete the template with as much detail as you can as this will help the case of your PR being accepted.  Once you are happy all the parts are in place click the &ldquo;Create Pull Request&rdquo;</p>
+<h2 id="step-9-your-work-is-done">Step 9: Your work is done</h2>
+<p>This means that your work is done congratulations you have submitted your first PR to the Xamarin.Forms project and on behalf of all Xamarin users thanks for fixing that bug/issue.</p>
+<p>All that is left is to wait for your PR to be accepted and merged but be prepared as this could lead to a conversation in the PR thread with one of the Xamarin team to finesse your PR or if you are just plain awesome it will just get merged at the next release.</p>
+<h2 id="step-10-repeat">Step 10: Repeat</h2>
+<p>Your PR was accepted your on a high your sticky bun and biscuits are finished and you now have code being used by developers all over the world on mobile projects varied and wide you feel invincible&hellip; Time to take that excitement and energy and pick another to fix so I&rsquo;ll help you the list of open issues can be found here:</p>
+<p><a href="https://github.com/xamarin/Xamarin.Forms/issues?WT.mc_id=OSS-MVP-5003764">Xamarin.Forms Github Issues page</a></p>
+<p>I hope that this helped you please leave comments below in the chat unless of course your future me in which case your welcome.</p>
+<h2 id="blog-post-used-in-creating-this">Blog post used in creating this:</h2>
+<p><a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/">The beginners guide to contributing to a github project - Rob Allen </a></p>
+<p><a href="https://devblogs.microsoft.com/xamarin/beginners-guide-contributing-xamarin-forms?WT.mc_id=OSS-MVP-5003764">Beginners guide to contributing to Xamarin.Forms - David Ortinau</a></p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/customfontsandiconsinxamarin/" data-toggle="tooltip" data-placement="top" title="Custom Fonts and Icons in Xamarin.Forms">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/post/handybigpicture/" data-toggle="tooltip" data-placement="top" title="Handy the Big Picture!">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
