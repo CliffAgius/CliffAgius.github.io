@@ -287,7 +287,11 @@ If you quickly head to Github again and the `Actions` Tab you will see the Commi
 
 ![Build.yml in pregress](2020-12-31-15-33-26.png)
 
-And if your quick enough and click the `Build Hugo Site` you can then watch the build process in action but more importantly if any of the steps fail you can see the warnings and why which could help you resolve the issue.  BUT I hope that it all worked a treat, and your Build has that satisfying green tick of success and if it does head over to your new blog site at:
+And if your quick enough and click the `Build Hugo Site` you can then watch the build process in action but more importantly if any of the steps fail you can see the warnings and why which could help you resolve the issue.
+
+![Watch the build process](2020-12-31-15-59-02.png)
+
+BUT I hope that it all worked a treat, and your Build has that satisfying green tick of success on the left and if it does head over to your new blog site at:
 
     <YOUR GITHUB USERNAME>.github.io
 
