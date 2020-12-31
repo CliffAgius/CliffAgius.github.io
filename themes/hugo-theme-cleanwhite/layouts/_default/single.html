@@ -11,32 +11,34 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <div class="tags">
-                        {{ range .Params.tags }}
-                        <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">
-                            {{ . }}
-                        </a>
-                        {{ end }}
-                    </div>
-                    <h1>{{ .Title }}</h1>
-                    <h2 class="subheading">{{ .Params.subtitle }}</h2>
-                    <span class="meta">
-                        Posted by 
-                        {{ if .Params.author }}
+                    <div class="post-heading-box">
+                        <div class="tags">
+                            {{ range .Params.tags }}
+                            <a class="tag" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}" title="{{ . }}">
+                                {{ . }}
+                            </a>
+                            {{ end }}
+                        </div>
+                        <h1>{{ .Title }}</h1>
+                        <h2 class="subheading">{{ .Params.subtitle }}</h2>
+                        <span class="meta">
+                            Posted by
+                            {{ if .Params.author }}
                             {{ .Params.author }}
-                        {{ else }}
-                                {{ .Site.Title }}
-                        {{ end }} 
-                        on 
-                        {{ .Date.Format "Monday, January 2, 2006" }}
-                        {{ if .Site.Params.page_view_conter }}
+                            {{ else }}
+                            {{ .Site.Title }}
+                            {{ end }}
+                            on
+                            {{ .Date.Format "Monday, January 2, 2006" }}
+                            {{ if .Site.Params.page_view_conter }}
                             {{ partial "page_view_counter.html" . }}
-                        {{ end }}
-                        <!-- Don't show "Last Modified on" if update happened on the same day. -->
-                        {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
-                        <br>Last Modified on {{ dateFormat "Monday, January 2, 2006" .Params.LastMod }}
-                        {{ end }}
-                    </span>
+                            {{ end }}
+                            <!-- Don't show "Last Modified on" if update happened on the same day. -->
+                            {{ if (and (not .Lastmod.IsZero) (not (eq (dateFormat "2006-01-02" .Lastmod) (dateFormat "2006-01-02" .Date)))) }}
+                            <br>Last Modified on {{ dateFormat "Monday, January 2, 2006" .Params.LastMod }}
+                            {{ end }}
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -72,13 +74,15 @@
                 <ul class="pager">
                     {{ if .PrevInSection }}
                     <li class="previous">
-                        <a href="{{ .PrevInSection.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .PrevInSection.Title}}">&larr;
+                        <a href="{{ .PrevInSection.URL }}" data-toggle="tooltip" data-placement="top"
+                            title="{{ .PrevInSection.Title}}">&larr;
                             Previous Post</a>
                     </li>
                     {{ end }}
                     {{ if .NextInSection }}
                     <li class="next">
-                        <a href="{{ .NextInSection.URL }}" data-toggle="tooltip" data-placement="top" title="{{ .NextInSection.Title}}">Next
+                        <a href="{{ .NextInSection.URL }}" data-toggle="tooltip" data-placement="top"
+                            title="{{ .NextInSection.Title}}">Next
                             Post &rarr;</a>
                     </li>
                     {{ end }}

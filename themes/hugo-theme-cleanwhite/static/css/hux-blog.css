@@ -328,6 +328,13 @@ pre code {
 .main-intro-header{
     background-size: contain; 
 }
+
+.post-heading-box{
+    display: block;
+    background-color: #2A2D2ECC;
+    text-align: center;
+}
+
 @media only screen and (min-width:768px) {
     .intro-header {
     margin-bottom: 20px;
@@ -370,6 +377,8 @@ pre code {
     margin-top: 40px;
     color: #404040;
 }
+
+
 
 @media only screen and (min-width:768px) {
     .intro-header .site-heading h1, .intro-header .page-heading h1 {
