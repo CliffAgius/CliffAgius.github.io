@@ -294,7 +294,13 @@ We head back to the Command line and use:
 
     hugo new /post/myAwesomeblogpost/index.md
 
-To write that 2nd post, after all your addoring fans want to hear from you.
+To write that 2nd post, after all your addoring fans want to hear from you and when your done all you need to do is commit this change to `main` and push and it will get built for you and made live on your Blog Site so you will need:
+
+    git add .
+    git commit -m "My helpful commit message"
+    git push
+
+And yes I know we shouldn't really push direct to `main` but this is a personal blog so deal with it. 😜
 
 Happy coding
 
