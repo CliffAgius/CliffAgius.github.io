@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="Clifford Agius | CA-Software Ltd">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://cliffagius.github.io//img/Banner.png">
+    <meta property="twitter:image" content="https://cliffagius.github.io//img/Banner.png" />
+    
+
+    
+    <meta name="title" content="Setup Hugo With Github Pages" />
+    <meta property="og:title" content="Setup Hugo With Github Pages" />
+    <meta property="twitter:title" content="Setup Hugo With Github Pages" />
+    
+
+    
+    <meta name="description" content="Moving from Ghost blog hosted on Azure to Hugo on Github Pages... And it&#39;s all FREE!">
+    <meta property="og:description" content="Moving from Ghost blog hosted on Azure to Hugo on Github Pages... And it&#39;s all FREE!" />
+    <meta property="twitter:description" content="Moving from Ghost blog hosted on Azure to Hugo on Github Pages... And it&#39;s all FREE!" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
+    <link rel="shortcut icon" href="/favicon.ico">
+
+    <title>Setup Hugo With Github Pages-</title>
+
+    <link rel="canonical" href="/post/setuphugowithghpages/">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+	
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hux-blog.css">
+
+    
+    
+    
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+    
+    
+    <script src="/js/bootstrap.min.js"></script>
+    
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Clifford Agius | CA-Software Ltd</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/iot">iot</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/xamarin">xamarin</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/speaking/">Speaking</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+                        <li><a href="/top/flying/">Flying</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/post/setuphugowithghpages/2020-12-31-13-46-27.png');
+        opacity: 0.6;
+    }
+</style>
+<header class="intro-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="post-heading-box">
+                        <div class="tags">
+                            
+                            <a class="tag" href="/tags/github" title="GitHub">
+                                GitHub
+                            </a>
+                            
+                        </div>
+                        <h1>Setup Hugo With Github Pages</h1>
+                        <h2 class="subheading"></h2>
+                        <span class="meta">
+                            Posted by
+                            
+                            Clifford Agius | CA-Software Ltd
+                            
+                            on
+                            Thursday, December 31, 2020
+                            
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <header>
+                    <h2>TOC</h2>
+                </header>
+                <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-and-why">What and Why?</a>
+      <ul>
+        <li><a href="#where-did-i-start">Where did I start?</a></li>
+        <li><a href="#installing-hugo">Installing Hugo</a></li>
+        <li><a href="#create-your-blog-site">Create your Blog Site</a></li>
+        <li><a href="#adding-a-theme">Adding a Theme</a></li>
+        <li><a href="#test">Test</a></li>
+        <li><a href="#lets-explore">Let’s Explore</a></li>
+        <li><a href="#our-first-post">Our First Post</a></li>
+        <li><a href="#whats-next">Whats next</a></li>
+        <li><a href="#set-up-github-pages">Set-up GitHub Pages</a></li>
+        <li><a href="#adding-a-workflow-cicd">Adding a Workflow (CI/CD)</a></li>
+        <li><a href="#lets-go-live">Lets go live</a></li>
+        <li><a href="#watch-the-magic">Watch the Magic!</a></li>
+        <li><a href="#now-what">Now what?</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+                
+                <h1 id="what-and-why">What and Why?</h1>
+<p>So, I have hosted my blog using Ghost on Azure Websites for over a year now and in that time I have found it hard to write blogs as much as I would like.  The reason being that I tend to have a lot of time either in the air or downroute somewhere with no data connection, plus I found the Ghost offering for writing Offline not that easy.</p>
+<p>Yes, I could write the post but then needed to tweak and play with uploading it using the Admin page of Ghost that took a good 10-15 minutes each time.  Now I confess I may have been doing it wrong but the other reason for the move is the fact that GitHub Pages is well FREE!!! Yes, totally free so here is how to set-up and use Hugo on Github Pages.</p>
+<h2 id="where-did-i-start">Where did I start?</h2>
+<p>I started as we all do Bingoogling and looking around, the <a href="https://gohugo.io/">Hugo Docs</a> are very good and explain how to set-up Hugo locally but not how to host on Github (Not at the time of writing anyway!) plus I didn&rsquo;t feel there was an End-to-End process of how to do this but fear not here is one (I Hope!)</p>
+<h2 id="installing-hugo">Installing Hugo</h2>
+<p>First, we need to install Hugo locally and set-up ready for your awesome blogging website. Now I am a Windows user and I have the awesome <a href="https://chocolatey.org/">Chocolatey</a> installed so I just used:</p>
+<pre><code>choco install hugo -confirm
+</code></pre>
+<p>If you don&rsquo;t have Chocolatey installed, you can just use:</p>
+<pre><code>Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+</code></pre>
+<p>But as I know you may not be using the same setup as me head to the <a href="https://gohugo.io/getting-started/installing">Hugo Docs</a> and find your set-up.</p>
+<p>Now we have it installed let just be sure it works, so from your favorite command line enter:</p>
+<pre><code>hugo version
+</code></pre>
+<p>You should see something like this:</p>
+<p>
+  <img src="2020-12-03-19-44-52.png" alt="Hugo Version showing it&amp;rsquo;s installed.">
+
+</p>
+<h2 id="create-your-blog-site">Create your Blog Site</h2>
+<p>Now that we have the Hugo tooling installed, we need to create our site and this couldn&rsquo;t be any simpler you just need to run:</p>
+<pre><code>hugo new site MyFancyBlog
+</code></pre>
+<p>This will create a new Blog site in a folder named <code>MyFancyBlog</code> so choose wisely!</p>
+<p>Now if we <code>cd</code> into that folder we should see something like this:</p>
+<p>
+  <img src="2020-12-03-21-28-41.png" alt="BlogSiteFolderContents">
+
+</p>
+<p>And that is your new blog site as simple as that, however if you were to publish this it would be a blank blog site so not very exciting, so lets add a theme to make it look pretty.</p>
+<h2 id="adding-a-theme">Adding a Theme</h2>
+<p>Now you can roll your one theme and the Docs are very good but if you’re like me and A - don&rsquo;t have the time or B - Crap at design and will make a mes of it then maybe grabbing a pre-baked theme is the best option. This is the first point I diverge from the Hugo Docs, in the docs it suggests that you add a Theme as a <code>git</code> submodule, which is fine as long as that theme is exactly what you want as you can not change unless the theme designer pulls in your PR.  However, if you want to use a theme as a starting point and edit from there you may want to do what I did and fork the Theme into your project, obviously check the Licence the Theme designer used before doing this.</p>
+<p>So go pick a theme from <a href="https://themes.gohugo.io/">https://themes.gohugo.io/</a> there are 1000&rsquo;s so take your time I&rsquo;ll wait here for you&hellip;</p>
+<p>Right so you picked the theme lets add it, so go into the folder you created earlier, and we need to make it a <code>git</code> repository so that we can track the changes and push to GitHub later.</p>
+<pre><code>git init
+cd themes
+git clone https://github.com/zhaohuabing/hugo-theme-cleanwhite  &lt;-- The Theme I picked and used...
+git add .
+git commit -m &quot;Initial Commit&quot;
+</code></pre>
+<p>This will clone the <code>hugo-theme-cleanwhite</code> theme into the themes folder so that you can edit and change as you see fit, you will notice that I ahve changed some of the layout and colours as well as adding a few parts here and there. It&rsquo;s all HTML and CSS changes mostly with a few minor edits to the GO that s part of the page it&rsquo;s actually a really nice way to decorate HTML so was a fun process.</p>
+<p>However, once we have made our changes we need to tell Hugo to use this theme when it does it&rsquo;s builds, so using your favorite text editor which should be <a href="https://code.visualstudio.com/">VSCode</a> in which case from the command line you can use:</p>
+<pre><code>code .
+</code></pre>
+<p>which will open the folder in VSCode ready to edit. So now open the <code>config.toml</code> file and add:</p>
+<pre><code>theme = &quot;hugo-theme-cleanwhite&quot;
+</code></pre>
+<p>While you’re in here you can set the Base-URL to your new blog sites URL and obviously change the title etc.  It&rsquo;s pretty obvious what you need to change as there are only 3 lines.</p>
+<h2 id="test">Test</h2>
+<p>Now we have a theme and all the bits set we can test to see what we have, and this is where Hugo is great as you can run the server locally to see exactly what it will look like when it&rsquo;s live.  You don&rsquo;t need anything other than:</p>
+<pre><code>hugo server -D
+</code></pre>
+<p>This will build the files and host them on LocalHost for you, in your terminal you should see something like:</p>
+<p>
+  <img src="2020-12-03-21-54-01.png" alt="RunningHugoServer">
+
+</p>
+<p>So, open your browser and and copy/paste the Localhost location which in this case is: &lsquo;http://localhost:1313/&rsquo; and you shoudl hopefully see you fancy new Blog site which in my case looks like this:</p>
+<p>
+  <img src="2020-12-31-12-34-23.png" alt="First Test run of the new Blog Site">
+
+</p>
+<h2 id="lets-explore">Let’s Explore</h2>
+<p>So we have a working site with a nice theme but how is this all coming together than and what do we need to do/know about the folders and structure to add out informative blog posts&hellip;  Well first lets look at the folder structure:</p>
+<p>
+  <img src="2020-12-31-12-57-11.png" alt="Blog Site Folder Structure">
+
+</p>
+<p>Now I could explain it all here but the <a href="https://gohugo.io/getting-started/directory-structure/">Hugo Docs do a much better job than me</a> so go take a look there, it&rsquo;s Ok I&rsquo;ll wait here again&hellip; So as you see there really isn&rsquo;t anything we need to worry about in the folders other than the Content Folder as this is well our content, what we want to share with the world.</p>
+<p>Now if we go into that folder it&rsquo;s empty as we havn&rsquo;t created anything yet so lets start.</p>
+<h2 id="our-first-post">Our First Post</h2>
+<p>As I like things to be neat and as I am copying over Blog posts from my old Azure/Ghost blogging site I wanted to have a folder for each Blog post rather than having all the markdown files in one big mess of a folder and all the images used in the Images folder elsewhere.  So I have created a folder in the <code>Content</code> folder called <code>post</code> and then inside here I createmy blog posts with a folder for each post.  In this folder will go teh Markdown file (What your reading now!) and any other required content like Images/MP4 file etc so that it&rsquo;s all in one place. But how do we do that nice and easy without popping out to File Explorer and creating things, well Hugo again does this for you with a simple command&hellip;</p>
+<pre><code>hugo new /post/myfirstblogpost/index.md
+</code></pre>
+<p>This will create a folder in your <code>post</code> folder and then inside that the starting Markdown document that you can use to start your blof post, the header of this MD file holds some info thats worth taking aquick look at:</p>
+<p>
+  <img src="2020-12-31-13-09-26.png" alt="Default Markdown File Header">
+
+</p>
+<p>As you will see here it&rsquo;s all fairly self explanitory so fill in the blanks, howhever I mentioned that I wanted to posts and images etc all in the same folder so for the <code>image:  &quot;&quot;</code> part in here you reference the image you want to be in the header at the top of the page and as an example you reference teh image from the base of the <code>Content</code> folder so:</p>
+<pre><code>image: &quot;/post/myfirstblogpost/myfirstblogpostHeaderImage.png&quot;
+</code></pre>
+<p>and then place the image file in the same folder as the MD (Markdown) file for your blog post, HOWEVER a big warning here make sure that the folder name used in the <code>image</code> tag is all LOWERCASE otherwise it won&rsquo;t work! If on;y I had a £1 for everytime I have forgotten this&hellip;</p>
+<p>As for the images in the content of the post like I have used on this page these you refernce directly by name of the image like so:</p>
+<pre><code> ![Default Markdown File Header](2020-12-31-13-09-26.png)
+</code></pre>
+<p>Now I know what your thinking Cliff why have you named your image with a date-time tag you idiot&hellip; Well as I like most people cut&amp;paste images to save having to open the folder inside the conttent/post etc etc to paste the image in I use a great <code>VSCode</code> extention called <a href="https://github.com/mushanshitiancai/vscode-paste-image">Paste Image</a> so I just use the Windows Snip &amp; Sketch tool to copy the image on the screen and then inside the Markdown File (ON Windows!) I paste it with <code>CTRL+ALT+V</code> and it pastes the image into the same folder as the MD file and names it with the current Date/Time as you see above.  Then all you need to do is give it a friendly Alt Text inside the <code>[]</code> for those readers using screen readers.</p>
+<p>Also in this little block you can add:</p>
+<pre><code>draft: true
+</code></pre>
+<p>this will ensure that the post is visble to you while testing but won&rsquo;t go live util you change it to false, you can even set a Publish date that will mean the post will go live when this dat passess:</p>
+<pre><code>publishDate: &quot;2021-12-31&quot;
+</code></pre>
+<h2 id="whats-next">Whats next</h2>
+<p>So we now have our blog post written it&rsquo;s awesome and we need to get to out there for the world to read&hellip; But first lets check it&rsquo;s going to look good:</p>
+<pre><code>hugo server -D
+</code></pre>
+<p>As we used before will run the localhost server, if you didn&rsquo;t stop it earlier and it&rsquo;s still running don&rsquo;t worry Hugo is smart enough to track the changes and re-build as you work away as lok as you save the files as you go. you should now see your first post in the list and can check it&rsquo;s what you expected.</p>
+<p>SO&hellip; Now we need to share with the world right!</p>
+<p>befoew we get carried away though we need to complete a local build of the site so that we have all the Static Files in place ready for the site to be built for us over on GitHub, this is a super difficult step&hellip;.</p>
+<pre><code>hugo -D
+</code></pre>
+<p>Yeah it&rsquo;s that easy and takes a few seconds then inside the root of our folder you will notice a new folder called <code>public</code> this is the base of our site and where all the `GO¬ files live ready to be built by GitHub Actions so lets go set that up.</p>
+<h2 id="set-up-github-pages">Set-up GitHub Pages</h2>
+<p>First lets get set-up over at GitHub, so head to <a href="http://www.github.com">www.github.com</a> and login (Or create an account if you don&rsquo;t have one Obvs!).</p>
+<p>Now your logged in you need to create a new Repository but this needs be be named in a special way as per the <a href="https://pages.github.com/">Docs here!</a> which is:</p>
+<pre><code>&lt;YOUR GITHUB USERNAME&gt;.github.io
+</code></pre>
+<p>Once this is done and your in the repo lets link our local to this new repo first we need to get the URL for the repo so if your not a GitHub user under the green &lsquo;Code&rsquo; button click the copy button.</p>
+<p>
+  <img src="2020-12-31-14-25-20.png" alt="Grabbing the Repo URL">
+
+</p>
+<p>Now in your Command Line tool:</p>
+<pre><code>git add .
+git commit -m &quot;Added our first blog post and pushing to GitHub...&quot;
+git remote add origin https://github.com/ca-software/ca-software.github.io.git  &lt;-- Obviously use your copied URL here...
+git push -u origin main
+</code></pre>
+<p>If you head out to GitHub and into the Repo you will see the files pushed and you may notice that there are less folders this is because empty folders are not pushed to GitHub so the <code>Static</code> folder for example will not get pushed as it&rsquo;s empty.</p>
+<p>So we have our fancy new blogsite built it runs locally and we have created and pushed a repository to Github but now how do we add some CI/CD magic so that when we push a change it&rsquo;s built by GitHub and hosted with the new changes.  Here we need to use a GitHub Workflow&hellip;</p>
+<p>First lets create a new branch and I liked to call it <code>gh-pages</code> and this should be a copy of the <code>main</code> branch</p>
+<pre><code>git checkout -b gh-pages
+git push -u origin gh-pages
+</code></pre>
+<p>now head out to Github again and on your repository click the Settings gear icon:</p>
+<p>
+  <img src="2020-12-31-14-44-32.png" alt="GitHub Repo Setting Icon">
+
+</p>
+<p>On the left make sure your on the <code>Options</code> tab and then scroll down until you find the <code>GitHub Pages</code> section:</p>
+<p>
+  <img src="2020-12-31-14-45-51.png" alt="GitHub Settings for GitHub Pages">
+
+</p>
+<p>In here change the <code>Source</code> to the <code>gh-pages</code> branch you created earlier and SAVE! (Don&rsquo;t forget to click the SAVE button&hellip; You Clicked it right!!!). I here you can come back later and add a custom domain following the docs.</p>
+<p>We now have the URL for your new fancy Blog as <code>&lt;YOUR GITHUB USERNAME&gt;.github.io</code> so if you head there in your browser you will get a 404 as there is nothing built for the server to server and display.  For this we need a Workflow as Mentioned.</p>
+<h2 id="adding-a-workflow-cicd">Adding a Workflow (CI/CD)</h2>
+<p>Back over on the GitHub page click the <code>Actions</code> tab at the top and then in here is lots of example starter actions we can use but lets just pick the top one <code>Simple Workflow</code></p>
+<p>
+  <img src="2020-12-31-14-53-04.png" alt="GitHub selecting a simple Action">
+
+</p>
+<p>Change the name to <code>Build.yml</code> at the top and then paste in the following:</p>
+<pre><code>name: build
+on:
+push:
+    branches: [main]
+
+jobs:
+build:
+    name: Build Hugo Site
+    runs-on: ubuntu-latest
+    steps:
+    - name: Install Hugo
+        env:
+        HUGO_VERSION: 0.75.1
+        run: |
+        mkdir ~/hugo
+        cd ~/hugo
+        curl -L &quot;https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz&quot; --output hugo.tar.gz
+        tar -xvzf hugo.tar.gz
+        sudo mv hugo /usr/local/bin
+
+    - name: Checkout main branch
+        uses: actions/checkout@v2
+        with:
+        ref: main
+        path: main
+        submodules: false
+
+    - name: Checkout gh-pages branch
+        uses: actions/checkout@v2
+        with:
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Hugo Build
+        run: cd main &amp;&amp; hugo
+
+    - name: Copy files
+        run: cp -rf main/public/* gh-pages/
+
+    - name: Commit changes
+        run: |
+        cd gh-pages
+
+        git config --local user.email &quot;actions@github.com&quot;
+        git config --local user.name &quot;GitHub Action&quot;
+
+        git add -A .
+
+        if git diff-index --quiet HEAD --; then
+            echo &quot;No changes...&quot;
+        else
+            git commit -m &quot;[CI] build hugo static site&quot;
+            git push
+        fi    
+</code></pre>
+<p>What is happening here then?  Well what we have set-up is a workflow that <code>On Push</code> of the Main branch it gets triggered and then installs Hugo version we specify, checks out thge main branch and carries out a build before commiting it back to the <code>gh-pages</code> branch which we set-up as the source for our site earlier. So now it&rsquo;s in place we need to commit this change so that it&rsquo;s taken into effect.</p>
+<p>
+  <img src="2020-12-31-14-59-48.png" alt="Commit the new Build.yml">
+
+</p>
+<p>Now this is in place every push to <code>Main</code> will trigger this workflow and cause the site to be built and published.</p>
+<h2 id="lets-go-live">Lets go live</h2>
+<p>If you remember we set out first blog post to <code>Draft</code> well let make it live by changing this to false and pushing it to the Github so that it can build the site and host it for us.</p>
+<p>First we need to switch to the main branch to make the changes as we should never need to make any changes on our local system to the <code>gh-pages</code> branch now that is all handled for us by the GitHub Workflow.</p>
+<pre><code>git checkout main
+code .    &lt;- Opens VSCode if installed so we can make the change.
+</code></pre>
+<p>Make the change from <code>true</code> to <code>false</code></p>
+<pre><code>git add .
+git commit -m &quot;Making our first blog post live...&quot;
+git pull                                                &lt;-We need to pull back the build workflow locally before we can push...
+git push
+</code></pre>
+<h2 id="watch-the-magic">Watch the Magic!</h2>
+<p>If you quickly head to Github again and the <code>Actions</code> Tab you will see the Commit you just made and if you click the title of the Commit you are taken into the Commit and can then see the Build:</p>
+<p>
+  <img src="2020-12-31-15-33-26.png" alt="Build.yml in pregress">
+
+</p>
+<p>And if your quick enough and click the <code>Build Hugo Site</code> you can then watch the build process in action but more importantly if any of the steps fail you can see the warnings and why which could help you resolve the issue.  BUT I hope that it all worked a treat, and your Build has that satisfying green tick of success and if it does head over to your new blog site at:</p>
+<pre><code>&lt;YOUR GITHUB USERNAME&gt;.github.io
+</code></pre>
+<p>And bask in the glory of having set-up your blog site.</p>
+<h2 id="now-what">Now what?</h2>
+<p>We head back to the Command line and use:</p>
+<pre><code>hugo new /post/myAwesomeblogpost/index.md
+</code></pre>
+<p>To write that 2nd post, after all your addoring fans want to hear from you.</p>
+<p>Happy coding</p>
+<p>Cliff.</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/post/dotnet5thoughts/" data-toggle="tooltip" data-placement="top"
+                            title="Dot Net 5 Thoughts">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+                
+<div id="disqus-comment"></div>
+
+
+
+            </div>
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        <a href="/tags/xamarin" title="xamarin">
+                            xamarin
+                        </a>
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="Clifford Agius | CA-Software Ltd" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fa fa-circle fa-stack-2x"></i>
+                               <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:CliffordAgius@CA_Software.co.uk">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    <li>
+                        <a href="https://twitter.com/CliffordAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/CliffAgius">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/clifford-agius/">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; Clifford Agius | CA-Software Ltd 2020
+                    <br>
+                    <a href="https://themes.gohugo.io/hugo-theme-cleanwhite">CleanWhite Hugo Theme</a> by <a href="https://zhaohuabing.com">Huabing</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="100px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=zhaohuabing&repo=hugo-theme-cleanwhite&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    async("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-158344868-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+</body>
+</html>
