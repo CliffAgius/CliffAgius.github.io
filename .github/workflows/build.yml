@@ -23,7 +23,7 @@ jobs:
         with:
           ref: main
           path: main
-          submodules: true
+          submodules: false
 
       - name: Checkout gh-pages branch
         uses: actions/checkout@v2
