@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OSS on Clifford Agius | CA-Software Ltd</title>
+    <link>https://cliffagius.github.io/tags/oss/</link>
+    <description>Recent content in OSS on Clifford Agius | CA-Software Ltd</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-gb</language>
+    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/tags/oss/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create your own Xamarin.Forms NuGet</title>
+      <link>https://cliffagius.github.io/post/privatexamarinnuget/</link>
+      <pubDate>Wed, 06 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/privatexamarinnuget/</guid>
+      <description>Create your own Xamarin.Forms NuGet I am guessing that if you are here you have found a bug with Xamarin.Forms (Or A.N.Other OSS Project!) and you followed my previous blog Here to create your awesome fix and PR which you are awaiting review.
+I had exactly this over the last week (Jan 2021) with a Memory Leak in the CollectionView control on UWP in a Xamarin.Forms project. The issue had been open for a while and you can see it here and there were various other issues related to the same problem, the good news is that the fault was found by @Gentledepp and they even created a fix AWESOME!</description>
+    </item>
+    
+  </channel>
+</rss>
