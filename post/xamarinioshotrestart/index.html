@@ -15,15 +15,15 @@
     
 
     
-    <meta name="title" content="Create your own Xamarin.Forms NuGet" />
-    <meta property="og:title" content="Create your own Xamarin.Forms NuGet" />
-    <meta property="twitter:title" content="Create your own Xamarin.Forms NuGet" />
+    <meta name="title" content="Setup HotRestart for iOS on Windows" />
+    <meta property="og:title" content="Setup HotRestart for iOS on Windows" />
+    <meta property="twitter:title" content="Setup HotRestart for iOS on Windows" />
     
 
     
-    <meta name="description" content="If you have an Open PR with Xamarin.Forms but need the fix to get your project working then here is the process to create your very own NuGet with your super fix while you wait for the PR to be merged.">
-    <meta property="og:description" content="If you have an Open PR with Xamarin.Forms but need the fix to get your project working then here is the process to create your very own NuGet with your super fix while you wait for the PR to be merged." />
-    <meta property="twitter:description" content="If you have an Open PR with Xamarin.Forms but need the fix to get your project working then here is the process to create your very own NuGet with your super fix while you wait for the PR to be merged." />
+    <meta name="description" content="If you develop Xamarin Applications and you’re on Windows then here is how to plug your iPhone into your Windows machine and debug without a Mac">
+    <meta property="og:description" content="If you develop Xamarin Applications and you’re on Windows then here is how to plug your iPhone into your Windows machine and debug without a Mac" />
+    <meta property="twitter:description" content="If you develop Xamarin Applications and you’re on Windows then here is how to plug your iPhone into your Windows machine and debug without a Mac" />
     
 
     
@@ -34,9 +34,9 @@
     <meta name="keyword"  content="Freelance .NET IoT Developer c# Azure CASOftware">
     <link rel="shortcut icon" href="/favicon.ico">
 
-    <title>Create your own Xamarin.Forms NuGet-</title>
+    <title>Setup HotRestart for iOS on Windows-</title>
 
-    <link rel="canonical" href="/post/privatexamarinnuget/">
+    <link rel="canonical" href="/post/xamarinioshotrestart/">
 
     <link rel="stylesheet" href="/css/iDisqus.min.css"/>
 	
@@ -155,7 +155,7 @@
 
 <style type="text/css">
     header.intro-header {
-        background-image: url('/post/privatexamarinnuget/2021-01-06-11-36-31.png');
+        background-image: url('/post/xamarinioshotrestart/2021-01-19-14-39-50.png');
         opacity: 0.6;
     }
 </style>
@@ -171,12 +171,8 @@
                                 Xamarin
                             </a>
                             
-                            <a class="tag" href="/tags/oss" title="OSS">
-                                OSS
-                            </a>
-                            
                         </div>
-                        <h1>Create your own Xamarin.Forms NuGet</h1>
+                        <h1>Setup HotRestart for iOS on Windows</h1>
                         <h2 class="subheading"></h2>
                         <span class="meta">
                             Posted by
@@ -184,7 +180,7 @@
                             Clifford Agius | CA-Software Ltd
                             
                             on
-                            Wednesday, January 6, 2021
+                            Tuesday, January 19, 2021
                             
                             
                             
@@ -215,86 +211,105 @@
                 </header>
                 <nav id="TableOfContents">
   <ul>
-    <li><a href="#create-your-own-xamarinforms-nuget">Create your own Xamarin.Forms NuGet</a>
+    <li><a href="#what-and-why">What and Why?</a>
       <ul>
-        <li><a href="#you-created-a-fix-now-what">You created a Fix now what?</a></li>
-        <li><a href="#whats-all-the-warnings">Whats all the WARNINGS!</a></li>
-        <li><a href="#where-is-our-nuget">Where is our NuGet?</a></li>
-        <li><a href="#how-to-use-this-nuget">How to use this NuGet?</a></li>
-        <li><a href="#reference-the-nuget-in-your-project">Reference the NuGet in your project.</a></li>
-        <li><a href="#final-thoughts">Final Thoughts.</a></li>
+        <li><a href="#apple-developer-account">Apple Developer Account</a></li>
+        <li><a href="#setup">Setup</a></li>
+        <li><a href="#fixing-that-ui">Fixing that UI</a></li>
+        <li><a href="#screen-mirroring">Screen Mirroring</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
       </ul>
     </li>
   </ul>
 </nav>
                 
-                <h1 id="create-your-own-xamarinforms-nuget">Create your own Xamarin.Forms NuGet</h1>
-<p>I am guessing that if you are here you have found a bug with Xamarin.Forms (Or A.N.Other OSS Project!) and you followed my previous blog <a href="https://www.cliffordagius.co.uk/post/firstxamarinpr/">Here</a> to create your awesome fix and PR which you are awaiting review.</p>
-<p>I had exactly this over the last week (Jan 2021) with a Memory Leak in the CollectionView control on UWP in a Xamarin.Forms project.  The issue had been open for a while and you can see it <a href="https://github.com/xamarin/Xamarin.Forms/issues/10473">here</a> and there were various other issues related to the same problem, the good news is that the fault was found by @Gentledepp and they even created a fix AWESOME!! however they have an internal build of Xamarin, so the fix was pulled into that Fork but no PR was created back to the main Xamarin.Forms Repo BOOO&hellip;</p>
-<p>So, my first task was to create a PR for this fix, and I thank @Gentledepp for the great work on creating the fix in the first place, but if you do create a fix for an Open-Source Project then please create a PR to give that fix back to the community.</p>
-<h2 id="you-created-a-fix-now-what">You created a Fix now what?</h2>
-<p>So, your fix is created, and it is awaiting review or like mine was merged really quick (I Poked the team on Twitter! 😜) but now it&rsquo;s sitting there awaiting the next release with your fix to be published.  In this time your project could be stalled, and your client is getting upset that it&rsquo;s outside your control, maybe they even start to complain about things.  Well, we can create our very own NuGet and use this in our project until the release from the team and carry on working.</p>
-<p>We do this very simply from the command line, first make sure you’re in the Xamarin.Forms folder and in the Branch that contains your fix then run the following command.</p>
-<pre><code>./build.ps1 -Target NugetPack -ScriptArgs '-packageVersion=&quot;9.9.9-custom&quot;'
+                <h1 id="what-and-why">What and Why?</h1>
+<p>If like me you’re using Xamarin to develop applications on your a Windows machine and don&rsquo;t have a Mac hanging around, how can you test your Shiny App on an iPhone? How can you check and debug the UI before sending it out there into the big bad world?</p>
+<p>Well, this is where Xamarin <a href="https://docs.microsoft.com/xamarin/xamarin-forms/deploy-test/hot-restart?WT.mc_id=DOP-MVP-5003764">HotRestart</a> comes in to save the day, using this amazing tool which is integrated to Visual Studio 2019 Version 16.5+ you can plug your iPhone into your Windows machine and deploy locally and debug that UI all without a Mac anywhere near you.  I have done this while on a flight so it&rsquo;s not some magic cloud thingy that the Xamarin team are up to either.</p>
+<p>The docs say that it&rsquo;s still in Preview, but I have been using it for a while now and it&rsquo;s stable as far as I can see and works great, however I have seen people struggle setting up even though the Docs seem fairly clear so here is my set-up with screen shots which may make it that little bit easier.</p>
+<h2 id="apple-developer-account">Apple Developer Account</h2>
+<p>Before we start the set-up as it&rsquo;s not 100% obvious but to do ANY development with an Apple device you need an Apple Developer Account and you can register and obtain one here <a href="https://developer.apple.com/">https://developer.apple.com/</a> this is the part where Apple take some of your hard earned cash to add to their pile, but without this account you can&rsquo;t do any development with an Apple device so if you don&rsquo;t have one go do that now.</p>
+<h2 id="setup">Setup</h2>
+<p>First you obviously need a Windows machine and Visual Studio 2019 16.5 or greater installed along with the Xamarin workload, but you already knew that right!</p>
+<p>So open your Xamarin project in VS19 and then you need to enable the tool which as of writing and with version 16.8.4 I have installed is still in Preview so go to:</p>
+<pre><code>Tools -&gt; Options -&gt; Environment -&gt; Preview Features -&gt; Enable Xamarin Hot Restart
 </code></pre>
-<p>But before you run the command you will notice that there is <code>-packageVersion=&quot;9.9.9-custom&quot;</code> this is a way to name your package with a version number and name so that it doesn&rsquo;t clash with the official builds, you can of course remove this if you don&rsquo;t want to do this.</p>
-<pre><code>./build.ps1 -Target NugetPack
-</code></pre>
-<p>This takes approx 10 minutes to run on my machine which is no slouch so go grab a Cuppa/Coffee or plan it into your day so you can walk the dogs or go for that run you promised yourself&hellip;</p>
-<p>When it&rsquo;s complete hopefully you will see a result like so:
-
-  <img src="2021-01-06-11-36-31.png" alt="CLI Output at the end of the Build">
+<p>
+  <img src="2021-01-19-14-39-50.png" alt="Enable Hot Restart">
 
 </p>
-<h2 id="whats-all-the-warnings">Whats all the WARNINGS!</h2>
-<p>You may also note that there are some WARNINGS but those in yellow are more INFO than actual warnings and you will see lots of them, if however, you see RED WARNINGS these will cause the build to fail.</p>
-<p>If this happens it (for me at least!) seemed to be that the project had last been saved with Debug and Control Gallery as the current build target.  <strong>So make sure it&rsquo;s set to one of the projects in the Platforms folder and Any CPU is selected.</strong></p>
+<p>Re-Start VS19 as suggested and then we need to make the iOS project our start-up project so in the Solution explorer right click the iOS project and set as the Start-up project.</p>
 <p>
-  <img src="2021-01-06-11-18-33.png" alt="Visual Studio Platform selection">
+  <img src="2021-01-19-14-47-24.png" alt="Set iOS Project as start-up">
 
 </p>
-<h2 id="where-is-our-nuget">Where is our NuGet?</h2>
-<p>The NuGet that is created will be in the Artifacts folder that you can find in the root of the solution and just to help you find it, at the end of the Build it tells you where it was saved and what it was called.</p>
+<p>Now that we have the iOS Project as the start-up plug in your iPhone using a standard iPhone USB cable nothing fancy just the regular one you use to charge your phone every night will do and then you will notice that the toolbar debug device will change to Local Device:</p>
 <p>
-  <img src="2021-01-06-11-39-24.png" alt="Where is the NuGet?">
+  <img src="2021-01-19-14-49-58.png" alt="Debug changes to Local Device">
 
 </p>
-<p>Looking in the folder you will see all the Nugets created.</p>
+<p>And this is the clever part that the Xamarin team spent clearly a lot of time, clicking this will take you through a Wizard to do the rest of the set-up:</p>
 <p>
-  <img src="2021-01-06-11-43-11.png" alt="NuGet Listing">
-
-</p>
-<h2 id="how-to-use-this-nuget">How to use this NuGet?</h2>
-<p>Now we have created our NuGet and have it with our fancy awesome bug fix we need to be able to use it in out project.  <strong>DO NOT PUSH TO NUGET.ORG GALLERY</strong> this is very important as your NuGet Build could clash with the official version or could be found by another Dev and they use your one by mistake so PLEASE DO NOT PUSH TO NUGET&hellip; Use this method instead, it&rsquo;s quick and super easy.</p>
-<p>The first thing we need to do is create a folder somewhere that we can store our Nugets as we create them and then reference within Visual Studio.  For me I have created a Folder called <code>Custom NuGet</code> but you can call it what you want it&rsquo;s just a folder so be inventive as Naming is hard.</p>
-<p>Now you have your folder copy the NUGETS from the <code>Artifacts</code> folder into this new Nugets folder, we do this so that as you switch branches in the Xamarin.Forms project as you want to work on another bugfix the Artifacts folder isn&rsquo;t lost.</p>
-<h2 id="reference-the-nuget-in-your-project">Reference the NuGet in your project.</h2>
-<p>Now you can open the project that you want to take advantage of your new fix and then right click the solution and select <code>Manage NuGet Packages for Solution</code> so that you open the package manager.</p>
-<p>Once this is open we need to add our Private internal custom NuGet feed so top right click the Gear icon.</p>
-<p>
-  <img src="2021-01-06-12-06-11.png" alt="Click the gear">
+  <img src="2021-01-19-14-52-29.png" alt="Wizard Step 1">
 
 </p>
 <p>
-  <img src="2021-01-06-12-07-48.png" alt="NuGet Options Dialog">
+  <img src="2021-01-19-14-53-18.png" alt="Wizard Step 2">
 
 </p>
-<p>Inside the Dialog click the <code>Add</code> button (Marked 1) and this will add a new feed location as you can see (Item 2) that is called <code>Package Source</code> by default.  At the bottom (Item 3) we use to change the details of this feed to something more meaningful to your team say <code>Custom NuGet</code> and then change the location to the Folder you created earlier. Clicking Ok will refresh the Nugets displayed to show the new Custom Nugets.</p>
-<p>It&rsquo;s important that on the Updates Tab you have <code>Include Prerelease</code> selected and you will then see the Nugets you have created.</p>
+<p>In Step 2 you will be asked to download iTunes and it&rsquo;s this connection to the iPhone that Visual Studio uses to deploy and debug your Application, so click the button and you&rsquo;ll be taken to the iTunes website to download the software, all you need to do is click the &ldquo;Get it from Microsoft&rdquo; button and follow the store instructions.</p>
 <p>
-  <img src="2021-01-06-12-20-55.png" alt="Showing the Updated Nugets">
+  <img src="2021-01-19-16-18-16.png" alt="Download iTunes">
 
 </p>
-<p>You can see that as we called our version <code>v9.9.9-custom</code> is shows as the latest version so clicking through to this update, we can select our version from the list and update the projects as needed.</p>
+<p>Don&rsquo;t worry the VS19 wizard will quietly sit and wait for you.  Once installed open the iTunes application and click all the Agree to terms and conditions stuff (Obviously you read it all right! 😉)</p>
 <p>
-  <img src="2021-01-06-12-22-38.png" alt="NuGet Version List">
+  <img src="2021-01-19-16-20-40.png" alt="Check device is seen in iTunes">
 
 </p>
-<h2 id="final-thoughts">Final Thoughts.</h2>
-<p>Well that it you now have your very own NuGet with your Awesome fix and away you go, the only downside to calling our version v9.9.9 is that when the team release the next version it will be hidden as your version number is higher, but if you untick the <code>Include Prerelease</code> it will go back to showing the latest stable version.</p>
-<p>I cannot say this enough please don&rsquo;t push to NUGET and also make sure your Awesome fix is submitted as a PR so that the rest of us can benefit from your awesome work, and thanks for helping Fix the bugs and keep up the great work.</p>
-<p>Happy Coding&hellip;</p>
-<p>Cliff.</p>
+<p>Once this is done you can return the VS19 wizard and it should move onto the next step asking you for your Developer Account credentials.  If it doesn&rsquo;t do this check that iTunes is open and that you can see your device listed on the left, you may need to unplug it and plug back in again for this to happen.</p>
+<p>
+  <img src="2021-01-19-16-19-28.png" alt="Link to developer account">
+
+</p>
+<p>When you enter the account details it will ask for the 2 factor auth code from your device</p>
+<p>
+  <img src="2021-01-19-16-22-08.png" alt="2Factor Auth Check">
+
+</p>
+<p>Check your Apple account registered device and it should give you an Apple ID Verification Code to enter here.</p>
+<p>Now you will be asked to select a team:</p>
+<p>
+  <img src="2021-01-19-16-23-57.png" alt="Select a team">
+
+</p>
+<p>When you do this the wizard will automatically provision the device using your Apple Developer Account you provided and that’s it you’re done, click the Finish button and enjoy.  It will now build the Application and deploy to your device, then you will see a pop-up inside VS19 that will ask you to manually open the App on the device:</p>
+<p>
+  <img src="2021-01-19-16-26-08.png" alt="Manually Open the App">
+
+</p>
+<p>Sadly, as Awesome as Hot Restart is it can&rsquo;t remotely open the App so you still need your finger to poke the screen, but if you think about the awesome tech in use here an Apple iPhone being deployed to and debugging with just your Windows Machine so if you ask me a poke of the screen each deploy isn&rsquo;t much to ask.</p>
+<p>
+  <img src="2021-01-19-16-39-15.png" alt="Click the App">
+
+</p>
+<p>
+  <img src="2021-01-19-16-40-51.png" alt="App Opened">
+
+</p>
+<h2 id="fixing-that-ui">Fixing that UI</h2>
+<p>Now that you have the system set-up and working you can fix up that UI so go into your XAML/C# for the UI page you want to edit and well just edit away&hellip;  Sadly, it doesn&rsquo;t use Hot Reload to reload your changes like it does for Android but I am sure this is on the TODO list for the Xamarin team. So, when your changes are made click the Restart button or (CTRL+SHIFT+F5) and the changes will be re-built and deployed before your trusty finger can poke the screen again</p>
+<p>
+  <img src="2021-01-19-17-23-47.png" alt="Restarting the App">
+
+</p>
+<h2 id="screen-mirroring">Screen Mirroring</h2>
+<p>Now you have this all set-up and working you may be wondering what tool all these speakers use when they mirror the iPhone to their laptop, well me I use the Reflector 3 App from AirSquirrel which you can find here <a href="https://www.airsquirrels.com/reflector">https://www.airsquirrels.com/reflector</a> it&rsquo;s not very expensive and works flawlessly.</p>
+<p>If you want to Mirror your Android (While we are on the subject I guess!) then I use Vysor which is again fairly inexpensive there is even a free version that can be found here: <a href="https://www.vysor.io/">https://www.vysor.io/</a></p>
+<h2 id="conclusion">Conclusion</h2>
+<p>This for me is an amazing tool and best part is it&rsquo;s free with any version of VS19 even the community version and allows you to build/debug/deploy applications for iOS directly from your Windows machine with NO NEED for a Mac anywhere in your pipeline.</p>
+<p>However, to deploy your amazing new App to the App Store you WILL still need a Mac but if like me you are on your travels a lot and away from the Mac or you don&rsquo;t have one then I suggest trying <a href="https://appcenter.ms/">AppCenter</a> for your builds and I&rsquo;ll talk about setting that up in my next blog post and how you can develop and deploy without a Mac using these amazing free tools from Microsoft.</p>
+<p>Happy Coding!</p>
 
 
                 
@@ -303,17 +318,11 @@
                 <ul class="pager">
                     
                     <li class="previous">
-                        <a href="/post/setuphugowithghpages/" data-toggle="tooltip" data-placement="top"
-                            title="Setup Hugo With Github Pages">&larr;
+                        <a href="/post/privatexamarinnuget/" data-toggle="tooltip" data-placement="top"
+                            title="Create your own Xamarin.Forms NuGet">&larr;
                             Previous Post</a>
                     </li>
                     
-                    
-                    <li class="next">
-                        <a href="/post/xamarinioshotrestart/" data-toggle="tooltip" data-placement="top"
-                            title="Setup HotRestart for iOS on Windows">Next
-                            Post &rarr;</a>
-                    </li>
                     
                 </ul>
 

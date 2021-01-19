@@ -6,7 +6,17 @@
     <description>Recent content in Xamarin on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Wed, 06 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/tags/xamarin/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/tags/xamarin/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup HotRestart for iOS on Windows</title>
+      <link>https://cliffagius.github.io/post/xamarinioshotrestart/</link>
+      <pubDate>Tue, 19 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/xamarinioshotrestart/</guid>
+      <description>What and Why? If like me you’re using Xamarin to develop applications on your a Windows machine and don&amp;rsquo;t have a Mac hanging around, how can you test your Shiny App on an iPhone? How can you check and debug the UI before sending it out there into the big bad world?
+Well, this is where Xamarin HotRestart comes in to save the day, using this amazing tool which is integrated to Visual Studio 2019 Version 16.</description>
+    </item>
+    
     <item>
       <title>Create your own Xamarin.Forms NuGet</title>
       <link>https://cliffagius.github.io/post/privatexamarinnuget/</link>
