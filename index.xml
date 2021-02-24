@@ -6,7 +6,16 @@
     <description>Recent content on Clifford Agius | CA-Software Ltd</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-gb</language>
-    <lastBuildDate>Tue, 19 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 23 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://cliffagius.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Setup Windows Terminal to run a Macro</title>
+      <link>https://cliffagius.github.io/post/windowsterminalcustommacros/</link>
+      <pubDate>Tue, 23 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://cliffagius.github.io/post/windowsterminalcustommacros/</guid>
+      <description>What and Why? I do a lot of Xamarin development for clients and when I am working away the builds sometimes fail on say Android or iOS and the reason a lot of the time is where the build system in Visual Studio has had a hiccup and the quickest and easiest way to resolve this is the Delete the Bin/OBJ folders and rebuild. Sadly, just a Clean in Visual Studio doesn&amp;rsquo;t delete the folders and files so doesn&amp;rsquo;t work especially for Android so it’s a hard delete.</description>
+    </item>
+    
     <item>
       <title>Setup HotRestart for iOS on Windows</title>
       <link>https://cliffagius.github.io/post/xamarinioshotrestart/</link>
